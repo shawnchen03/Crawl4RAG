@@ -83,6 +83,30 @@
 - Fix content duplication issues
 - Add more error recovery mechanisms
 
+## v1.4.1 (Current - JSON Parsing Debug)
+### Features
+- Attempted to fix JSON parsing from GPT response
+- Added rich metadata storage
+- Improved error logging
+
+### Problems Identified
+- JSON parsing still failing despite clean response
+- Possible encoding or hidden character issues
+- Need to verify GPT model compatibility
+- Directory structure needs cleanup
+
+### Changes Made
+- Added response cleaning attempts
+- Added alternate parsing methods
+- Improved error logging
+- Attempted to fix model name issues
+
+### Next Steps
+- Need to verify raw GPT response format
+- Consider simpler response structure
+- May need to modify GPT prompt
+- Clean up directory structure
+
 ## Future Plans
 ### v1.5.0 (Planned)
 #### Features to Add

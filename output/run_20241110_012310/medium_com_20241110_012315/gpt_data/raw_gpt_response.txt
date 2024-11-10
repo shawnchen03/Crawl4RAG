@@ -1,0 +1,56 @@
+```json
+{
+    "bundles": {
+        "Statistical Analysis": {
+            "urls": [
+                "https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714?source=tag_recommended_stories_page------data_science---0-84--------------------f9e26b5d_ac61_45ed_8d7f_acc5a99e4353-------",
+                "https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14?source=tag_recommended_stories_page------data_science---5-84--------------------f9e26b5d_ac61_45ed_8d7f_acc5a99e4353-------"
+            ],
+            "topic": "Exploring flaws in statistical methods and their implications.",
+            "reason": "Both articles critically analyze statistical methods and their applications, providing insights into their limitations and real-world implications.",
+            "articles": [
+                "The Statistical Significance Scam",
+                "Predicting Every Election Since 1916"
+            ]
+        },
+        "Ranking and Evaluation Metrics": {
+            "urls": [
+                "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75?source=tag_recommended_stories_page------data_science---1-107--------------------f9e26b5d_ac61_45ed_8d7f_acc5a99e4353-------",
+                "https://medium.com/towards-data-science/how-to-create-a-rag-evaluation-dataset-from-documents-140daa3cbe71?source=tag_recommended_stories_page------data_science---16-85--------------------c8982bd8_9cfe_48a1_a4a9_a67006018daf-------"
+            ],
+            "topic": "Understanding metrics for evaluating machine learning models.",
+            "reason": "These articles focus on different evaluation metrics used in machine learning, discussing their importance and application in real-world scenarios.",
+            "articles": [
+                "Normalized Discounted Cumulative Gain (NDCG) — The Ultimate Ranking Metric",
+                "How to Create a RAG Evaluation Dataset From Documents"
+            ]
+        },
+        "Python Programming and Automation": {
+            "urls": [
+                "https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63?source=tag_recommended_stories_page------data_science---7-85--------------------f9e26b5d_ac61_45ed_8d7f_acc5a99e4353-------",
+                "https://medium.com/@tomaszs2/a-5-minute-python-script-that-would-take-11-hours-in-corporate-development-4ea854bd3a53?source=tag_recommended_stories_page------data_science---14-84--------------------c8982bd8_9cfe_48a1_a4a9_a67006018daf-------"
+            ],
+            "topic": "Utilizing Python for automation and efficiency.",
+            "reason": "Both articles provide practical insights into using Python for automating tasks, showcasing scripts that enhance productivity.",
+            "articles": [
+                "20 Python Scripts To Automate Your Daily Tasks",
+                "A 5-Minute Python Script That Would Take 11 Hours in Corporate Development"
+            ]
+        },
+        "Machine Learning Concepts": {
+            "urls": [
+                "https://medium.com/gitconnected/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322?source=tag_recommended_stories_page------data_science---6-107--------------------f9e26b5d_ac61_45ed_8d7f_acc5a99e4353-------",
+                "https://medium.com/h7w/an-introduction-to-transformers-in-machine-learning-50c8a53af576?source=tag_recommended_stories_page------data_science---15-107--------------------c8982bd8_9cfe_48a1_a4a9_a67006018daf-------"
+            ],
+            "topic": "Exploring advanced machine learning techniques and frameworks.",
+            "reason": "These articles delve into advanced machine learning concepts, discussing knowledge graphs and transformers, which are crucial for modern AI applications.",
+            "articles": [
+                "How to Query a Knowledge Graph with LLMs Using gRAG",
+                "An Introduction to Transformers in Machine Learning"
+            ]
+        }
+    },
+    "selection_logic": "I selected articles that provide substantial technical insights and practical applications in data science, focusing on statistical analysis, evaluation metrics, Python programming, and machine learning concepts. These articles were chosen based on their relevance to current trends and common challenges faced in the field.",
+    "grouping_logic": "The articles were grouped into thematic bundles based on their content relationships. Each bundle focuses on a specific area of data science, such as statistical analysis, programming for automation, and machine learning techniques, allowing for a more organized and coherent understanding of the topics."
+}
+```

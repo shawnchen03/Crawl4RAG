@@ -1,0 +1,50 @@
+```json
+{
+    "bundles": {
+        "Statistical Analysis and Data Science Tools": {
+            "urls": [
+                "https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714",
+                "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75",
+                "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3"
+            ],
+            "topic": "Exploring statistical methods and tools in data science.",
+            "reason": "These articles discuss statistical significance, ranking metrics, and the role of Python in data science, providing insights into tools and methodologies used in the field.",
+            "articles": [
+                "The Statistical Significance Scam",
+                "Normalized Discounted Cumulative Gain (NDCG) — The Ultimate Ranking Metric",
+                "Python is No More The King of Data Science"
+            ]
+        },
+        "Machine Learning and AI": {
+            "urls": [
+                "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876",
+                "https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322",
+                "https://medium.com/gitconnected/llms-and-the-student-dilemma-learning-to-solve-or-learning-to-remember-249152b72d82"
+            ],
+            "topic": "Understanding and applying machine learning models and AI.",
+            "reason": "These articles focus on large language models (LLMs) and their applications, providing foundational knowledge and practical applications in AI.",
+            "articles": [
+                "Understanding LLMs from Scratch Using Middle School Math",
+                "How to Query a Knowledge Graph with LLMs Using gRAG",
+                "LLMs and the Student Dilemma: Learning to Solve or Learning to Remember?"
+            ]
+        },
+        "Data Science Career and Skills": {
+            "urls": [
+                "https://medium.com/towards-data-science/top-data-science-career-questions-answered-abd3e3c085cc",
+                "https://medium.com/towards-data-science/kickstart-your-data-science-journey-a-guide-for-aspiring-data-scientists-96e5072bd19a",
+                "https://medium.com/the-data-entrepreneurs/i-built-an-ai-app-in-4-days-heres-how-i-did-it-2eb805783377"
+            ],
+            "topic": "Guidance and insights for aspiring data scientists.",
+            "reason": "These articles provide career advice, essential skills, and practical experiences for those looking to enter or advance in the data science field.",
+            "articles": [
+                "Top Data Science Career Questions, Answered",
+                "Kickstart Your Data Science Journey — A Guide for Aspiring Data Scientists",
+                "I Built an AI App in 4 Days — here’s how I did it."
+            ]
+        }
+    },
+    "selection_logic": "The articles were selected based on their relevance to key topics in data science and technology, focusing on statistical methods, machine learning, AI, and career guidance.",
+    "grouping_logic": "Articles were grouped into thematic bundles based on their content focus, such as statistical analysis, machine learning applications, and career development in data science, to provide a cohesive understanding of each topic area."
+}
+```

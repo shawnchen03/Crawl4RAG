@@ -127,19 +127,12 @@ def main():
     for i, bundle in enumerate(all_bundles, 1):
         print(f"\n[{i}/{len(all_bundles)}] Processing bundle: {bundle.replace('_', ' ').title()}")
         try:
-            # Create bundle directory inside articles directory
-            bundle_dir = os.path.join(detector.articles_dir, bundle)
-            os.makedirs(bundle_dir, exist_ok=True)
-            
-            # Set output directory for this specific bundle
-            scraper.output_dir = bundle_dir
-            
             # Scrape the bundle
             scraper.scrape_bundle(bundle)
             
             # Rename the combined file to include bundle name
-            old_combined = os.path.join(bundle_dir, "finance_articles_combined.md")
-            new_combined = os.path.join(bundle_dir, f"{bundle}_combined.md")
+            old_combined = os.path.join(run_dir, "finance_articles_combined.md")
+            new_combined = os.path.join(run_dir, f"{bundle}_combined.md")
             if os.path.exists(old_combined):
                 os.rename(old_combined, new_combined)
             

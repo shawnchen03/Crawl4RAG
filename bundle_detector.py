@@ -92,7 +92,7 @@ class BundleDetector:
         try:
             client = openai.OpenAI()
             response = client.chat.completions.create(
-                model="gpt-4o-mini",
+                model="gpt-4o",
                 messages=[
                     {
                         "role": "system", 
@@ -124,65 +124,56 @@ class BundleDetector:
                 max_tokens=2000
             )
             
-            # Add debug logging
-            print("\nGPT Raw Response:")
-            print(response.choices[0].message.content)
-            
-            # Save raw response before parsing
+            # 1. First save raw response
+            raw_response = response.choices[0].message.content
             raw_response_file = os.path.join(self.gpt_dir, "raw_gpt_response.txt")
             with open(raw_response_file, 'w', encoding='utf-8') as f:
-                f.write(response.choices[0].message.content)
+                f.write(raw_response)
+            print(f"Raw GPT response saved to: {raw_response_file}")
             
+            # 2. Try to clean the response
+            cleaned_response = raw_response.strip()
+            # Remove any BOM or hidden characters
+            cleaned_response = cleaned_response.encode('utf-8', errors='ignore').decode('utf-8')
+            
+            # 3. Try to parse JSON
             try:
-                # Clean the response string before parsing
-                response_text = response.choices[0].message.content.strip()
-                # Remove any BOM or hidden characters
-                response_text = response_text.encode().decode('utf-8-sig')
-                
-                result = json.loads(response_text)
-                
-                # Validate the structure we need
-                if not isinstance(result, dict) or 'bundles' not in result:
-                    print("Invalid response structure")
-                    return None
-                
-                # Save GPT's analysis
-                gpt_output_file = os.path.join(self.gpt_dir, "gpt_analysis.json")
-                with open(gpt_output_file, 'w', encoding='utf-8') as f:
-                    json.dump({
-                        'input_links': all_links,
-                        'gpt_analysis': result
-                    }, f, indent=2)
-                
-                print("\nGPT's Selection Logic:")
-                print(result.get('selection_logic', ''))
-                print("\nGPT's Grouping Logic:")
-                print(result.get('grouping_logic', ''))
-                
-                # Print bundles for verification
-                print("\nDetected Bundles:")
-                for name, data in result['bundles'].items():
-                    print(f"\n{name}:")
-                    print(f"Topic: {data['topic']}")
-                    print("Articles:")
-                    for article in data['articles']:
-                        print(f"- {article}")
-                
-                return result['bundles']
-                
+                rich_analysis = json.loads(cleaned_response)
+                print("Successfully parsed GPT response")
             except json.JSONDecodeError as e:
-                print(f"\nJSON Parse Error: {str(e)}")
-                print("Response that failed parsing:")
-                print(response.choices[0].message.content)
-                
-                # Try alternate parsing method
-                try:
-                    import ast
-                    result = ast.literal_eval(response_text)
-                    return result['bundles']
-                except:
-                    print("Alternate parsing also failed")
-                    return None
+                print(f"Failed to parse GPT response: {str(e)}")
+                print("Raw response:")
+                print(cleaned_response)
+                return None
+            
+            # 4. Save rich analysis
+            gpt_output_file = os.path.join(self.gpt_dir, "gpt_analysis.json")
+            with open(gpt_output_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    'input_links': all_links,
+                    'gpt_analysis': rich_analysis
+                }, f, indent=2)
+            
+            # Convert to simple format for scrape_all.py
+            simple_bundles = {}
+            for name, data in rich_analysis['bundles'].items():
+                # Convert spaces to underscores and lowercase for bundle names
+                bundle_name = name.lower().replace(' ', '_')
+                simple_bundles[bundle_name] = data['urls']
+            
+            # Save simple format
+            bundles_file = os.path.join(self.bundles_dir, "detected_bundles.json")
+            with open(bundles_file, 'w', encoding='utf-8') as f:
+                json.dump(simple_bundles, f, indent=2)
+            
+            return simple_bundles  # Return simple format for scrape_all.py
+            
+        except Exception as e:
+            print(f"Error in GPT processing: {str(e)}")
+            print("Full error:")
+            import traceback
+            traceback.print_exc()
+            return None
         except Exception as e:
             print(f"\nGPT API Error: {str(e)}")
             print("Full error:")
