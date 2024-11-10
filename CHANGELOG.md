@@ -107,16 +107,57 @@
 - May need to modify GPT prompt
 - Clean up directory structure
 
-## Future Plans
-### v1.5.0 (Planned)
-#### Features to Add
-- Support for more content platforms
-- Better theme detection
-- Improved content organization
-- Enhanced error recovery
+## v1.4.2 (Current - Response Format Debug)
+### Latest Changes (2024-11-10)
+- Fixed JSON parsing issues
+- GPT now successfully returns bundles
+- Implemented proper format conversion for scrape_all.py
 
-#### Problems to Address
-- Model optimization
-- Processing efficiency
-- Content quality validation
-- Error handling improvements
+### Current State
+1. Working:
+   - Jina content fetching
+   - GPT analysis and bundling
+   - Rich metadata storage
+   - Basic format conversion
+
+2. Issues Fixed:
+   - JSON parsing errors resolved
+   - Model name corrected (from gpt-4o-mini to gpt-4)
+   - Directory structure issues fixed
+   - Response format standardized
+
+3. Where We Left Off:
+   - GPT returns rich bundle format:
+     ```json
+     {
+         "bundles": {
+             "bundle_name": {
+                 "urls": ["url1", "url2"],
+                 "topic": "description",
+                 "reason": "explanation"
+             }
+         }
+     }
+     ```
+   - Need to convert to scrape_all.py format:
+     ```json
+     {
+         "bundle_name": ["url1", "url2"]
+     }
+     ```
+
+### Next Steps
+1. Test format conversion thoroughly
+2. Verify bundle processing in scrape_all.py
+3. Consider keeping rich metadata for later use
+4. Add validation for converted format
+
+### Open Questions
+1. Should we store both formats?
+2. How to use rich metadata in article formatting?
+3. Need to handle failed conversions?
+
+### Priority for Next Session
+1. Test complete workflow with new format
+2. Add error recovery for format conversion
+3. Document metadata usage options

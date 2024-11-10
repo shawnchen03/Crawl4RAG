@@ -131,10 +131,13 @@ class BundleDetector:
                 f.write(raw_response)
             print(f"Raw GPT response saved to: {raw_response_file}")
             
-            # 2. Try to clean the response
+            # 2. Clean response - remove any JSON code block markers
             cleaned_response = raw_response.strip()
-            # Remove any BOM or hidden characters
-            cleaned_response = cleaned_response.encode('utf-8', errors='ignore').decode('utf-8')
+            if cleaned_response.startswith('```json'):
+                cleaned_response = cleaned_response[7:]
+            if cleaned_response.endswith('```'):
+                cleaned_response = cleaned_response[:-3]
+            cleaned_response = cleaned_response.strip()
             
             # 3. Try to parse JSON
             try:
@@ -142,9 +145,17 @@ class BundleDetector:
                 print("Successfully parsed GPT response")
             except json.JSONDecodeError as e:
                 print(f"Failed to parse GPT response: {str(e)}")
-                print("Raw response:")
-                print(cleaned_response)
-                return None
+                print("Attempting alternate parsing method...")
+                # Try alternate parsing
+                try:
+                    import ast
+                    # Remove any potential markdown formatting
+                    cleaned_text = cleaned_response.replace('```json', '').replace('```', '')
+                    rich_analysis = ast.literal_eval(cleaned_text)
+                    print("Successfully parsed using alternate method")
+                except Exception as parse_error:
+                    print(f"All parsing attempts failed: {str(parse_error)}")
+                    return None
             
             # 4. Save rich analysis
             gpt_output_file = os.path.join(self.gpt_dir, "gpt_analysis.json")
@@ -154,19 +165,27 @@ class BundleDetector:
                     'gpt_analysis': rich_analysis
                 }, f, indent=2)
             
-            # Convert to simple format for scrape_all.py
+            # Convert to simplified format for scrape_all.py
             simple_bundles = {}
             for name, data in rich_analysis['bundles'].items():
-                # Convert spaces to underscores and lowercase for bundle names
+                # Convert bundle name to snake_case
                 bundle_name = name.lower().replace(' ', '_')
+                # Only take the URLs
                 simple_bundles[bundle_name] = data['urls']
             
-            # Save simple format
+            # Save simplified format
             bundles_file = os.path.join(self.bundles_dir, "detected_bundles.json")
             with open(bundles_file, 'w', encoding='utf-8') as f:
                 json.dump(simple_bundles, f, indent=2)
             
-            return simple_bundles  # Return simple format for scrape_all.py
+            # Print what we're returning
+            print("\nConverted bundles for scraping:")
+            for name, urls in simple_bundles.items():
+                print(f"\n{name}:")
+                for url in urls:
+                    print(f"- {url}")
+            
+            return simple_bundles  # This is what scrape_all.py will use
             
         except Exception as e:
             print(f"Error in GPT processing: {str(e)}")
