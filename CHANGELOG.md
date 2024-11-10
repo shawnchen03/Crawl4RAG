@@ -1,5 +1,19 @@
 # Development Timeline
 
+> **Note to Future Development:**
+> Always keep this CHANGELOG and README.md in sync with development.
+> The CHANGELOG serves as:
+> 1. Development history
+> 2. Current state reference
+> 3. Future planning guide
+> 4. Debug history
+>
+> When making changes:
+> - Update both files immediately
+> - Document all issues and fixes
+> - Note any pending problems
+> - Track API and model changes
+
 ## v1.0.0 (Initial Version)
 ### Features
 - Basic static bundle scraping
@@ -161,3 +175,162 @@
 1. Test complete workflow with new format
 2. Add error recovery for format conversion
 3. Document metadata usage options
+
+## v1.4.3 (Current - Bundle Creation Success)
+### Latest Changes (2024-11-10 01:39 AM)
+- Successfully fixed JSON parsing issues
+- GPT now correctly returns and processes bundles
+- Format conversion working properly
+
+### Working Features
+1. Content Processing:
+   - Jina content fetching works
+   - GPT analysis generates proper JSON
+   - Rich bundle format preserved
+   - Successful conversion to simple format
+
+2. Data Flow:
+   ```
+   Jina Reader → Raw Content → GPT Analysis → Rich Bundles → Simple Format
+   ```
+
+3. File Structure:
+   - Raw content saved properly
+   - GPT analysis stored with metadata
+   - Both rich and simple bundle formats preserved
+
+### Next Debugging Round
+1. Issues to Address:
+   - Verify bundle content is being scraped correctly
+   - Check article formatting process
+   - Validate final output structure
+   - Test with different website types
+
+2. Potential Issues:
+   - Article content extraction
+   - Rate limiting during scraping
+   - Memory usage with large bundles
+   - Error handling in format conversion
+
+3. Testing Needed:
+   - Full workflow with new bundles
+   - Different website structures
+   - Error recovery scenarios
+   - Output validation
+
+### Priority for Next Session
+1. Test article scraping with new bundle format
+2. Monitor memory usage during processing
+3. Verify all content is properly formatted
+4. Add more comprehensive error handling
+
+### Notes for Tomorrow
+- Current state: Bundle creation working
+- Next focus: Article scraping and formatting
+- Keep both rich and simple formats
+- Consider adding progress tracking
+
+## v1.4.4 (Current - Scraping Debug)
+### Latest Changes (2024-11-10 01:45 AM)
+- Bundle creation and format conversion working
+- GPT analysis successful
+- Found new errors in scraping phase
+
+### Current Issues
+1. Scraper Variable Error:
+   ```python
+   Error processing bundle data_science_techniques: 
+   cannot access local variable 'scraper' where it is not associated with a value
+   ```
+
+2. Missing Function Error:
+   ```python
+   NameError: name 'combine_all_bundles' is not defined
+   ```
+
+3. Working Parts:
+   - Bundle detection works
+   - GPT analysis successful
+   - Format conversion correct
+   - Directory structure proper
+
+4. Error Analysis:
+   - Scraper not initialized in choice 2 path
+   - combine_all_bundles function missing
+   - Bundle processing failing
+
+### Next Steps
+1. Fix scraper initialization:
+   - Move scraper creation before bundle processing
+   - Ensure scraper available in both paths
+
+2. Add missing function:
+   - Implement combine_all_bundles
+   - Add proper error handling
+
+3. Test scraping phase:
+   - Verify scraper functionality
+   - Test bundle processing
+   - Validate output structure
+
+### Priority Fixes
+1. Initialize scraper in both paths
+2. Add combine_all_bundles function
+3. Test complete workflow
+4. Add error recovery
+
+## v1.4.5 (Current - Scraping Progress)
+### Latest Changes (2024-11-10 01:55 AM)
+- Bundle creation and scraping working
+- Articles being saved correctly
+- Found OpenAI API version issue
+
+### Current State
+1. Working Features:
+   - Bundle detection successful
+   - Article scraping working
+   - Directory structure correct
+   - Content saving properly
+
+2. Issues Found:
+   ```
+   Error in GPT formatting: 
+   You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0
+   ```
+
+3. Directory Structure Working:
+   ```
+   output/run_[timestamp]/
+   ├── data_science_techniques_and_tools/
+   │   ├── medium_com_*.md
+   │   ├── python_in_data_science/
+   │   │   ├── medium_com_*.md
+   │   │   ├── machine_learning_and_ai_applications/
+   │   │   │   ├── medium_com_*.md
+   │   │   │   └── finance_articles_combined.md
+   │   │   └── finance_articles_combined.md
+   │   └── finance_articles_combined.md
+   ├── master_combined.md
+   └── master_formatted.md
+   ```
+
+### Next Steps
+1. Fix OpenAI API version issue:
+   - Update to new API format
+   - Or pin to older version (openai==0.28)
+
+2. Improve Directory Structure:
+   - Flatten hierarchy
+   - Fix nested bundle directories
+   - Maintain better organization
+
+3. Testing Needed:
+   - Verify article content
+   - Check formatting
+   - Validate combined files
+
+### Priority Fixes
+1. Update OpenAI API calls
+2. Fix directory nesting
+3. Verify content quality
+4. Add more error handling

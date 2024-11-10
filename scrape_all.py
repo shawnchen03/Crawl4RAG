@@ -31,6 +31,36 @@ def get_safe_directory_name(url: str) -> str:
     safe_name = ''.join(c if c.isalnum() or c in ['.', '-'] else '_' for c in path)
     return safe_name
 
+def combine_all_bundles(run_dir: str, output_file: str):
+    """Combine all bundle files into one master file"""
+    print("\nCombining all bundles...")
+    
+    try:
+        # Find all bundle files
+        bundle_files = []
+        for root, _, files in os.walk(run_dir):
+            for file in files:
+                if file.endswith('_combined.md'):
+                    bundle_files.append(os.path.join(root, file))
+        
+        if not bundle_files:
+            print("No bundle files found to combine")
+            return
+        
+        # Combine all files
+        with open(output_file, 'w', encoding='utf-8') as outfile:
+            for bundle_file in bundle_files:
+                bundle_name = os.path.basename(bundle_file).replace('_combined.md', '')
+                outfile.write(f"\n\n# Bundle: {bundle_name}\n\n")
+                
+                with open(bundle_file, 'r', encoding='utf-8') as infile:
+                    outfile.write(infile.read())
+                    
+        print(f"Combined {len(bundle_files)} bundles into: {output_file}")
+        
+    except Exception as e:
+        print(f"Error combining bundles: {str(e)}")
+
 def main():
     # Parse command line arguments
     args = parse_args()
@@ -50,6 +80,10 @@ def main():
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     run_dir = os.path.join(base_output_dir, f"run_{timestamp}")
     os.makedirs(run_dir, exist_ok=True)
+    
+    # Initialize scraper and formatter before the choice branch
+    scraper = FinanceCrawler(output_dir=run_dir, timeout=args.timeout)
+    formatter = ArticleFormatter(api_key)
     
     # Ask user for bundle source
     print("\nChoose bundle source:")
