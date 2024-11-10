@@ -5,3 +5,4 @@ python-dotenv==1.0.0
 tiktoken==0.5.1
 lxml  # for XML parsing
 argparse==1.4.0 
+sseclient-py>=1.7.2  # For Jina streaming support

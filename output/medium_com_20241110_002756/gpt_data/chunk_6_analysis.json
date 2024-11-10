@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "title": "To Index or Not to Index",
+      "url": "https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae",
+      "publication": "Towards Data Science",
+      "engagement": "181 claps, 3 responses",
+      "topics": [
+        "Data Science",
+        "SQL",
+        "Indexing"
+      ],
+      "technical_level": "Intermediate"
+    },
+    {
+      "title": "Understanding LLMs from Scratch Using Middle School Math",
+      "url": "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876",
+      "publication": "Towards Data Science",
+      "engagement": "4.3K claps, 47 responses",
+      "topics": [
+        "Data Science",
+        "Mathematics",
+        "LLMs"
+      ],
+      "technical_level": "Basic"
+    }
+  ]
+}

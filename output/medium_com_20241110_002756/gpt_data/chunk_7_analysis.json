@@ -1,0 +1,29 @@
+{
+  "articles": [
+    {
+      "title": "Predicting Every Election Since 1916",
+      "url": "https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14?source=topic_portal---recommended_stories---data_science---5-84--------------------41782577_9f4b_4f8a_8157_ec5f6a18a5aa-------",
+      "publication": "Towards Data Science",
+      "engagement": "392 claps, 8 responses",
+      "topics": [
+        "Data Science",
+        "Election Prediction",
+        "Probability"
+      ],
+      "technical_level": "Intermediate"
+    },
+    {
+      "title": "How to Query a Knowledge Graph with LLMs Using gRAG",
+      "url": "https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322?source=topic_portal---recommended_stories---data_science---6-107--------------------41782577_9f4b_4f8a_8157_ec5f6a18a5aa-------",
+      "publication": "Towards Data Science",
+      "engagement": "371 claps, 1 response",
+      "topics": [
+        "Data Science",
+        "Knowledge Graph",
+        "LLMs",
+        "gRAG"
+      ],
+      "technical_level": "Advanced"
+    }
+  ]
+}

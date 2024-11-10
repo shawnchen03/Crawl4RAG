@@ -1,0 +1,69 @@
+{
+  "timestamp": "20241110_005228",
+  "gpt_input": {
+    "articles": [
+      {
+        "title": "Normalized Discounted Cumulative Gain (NDCG) \u2014 The Ultimate Ranking Metric -------------------------------------------------------------------------- ### NDCG \u2014 The Rank-Aware Metric for Evaluating Recommendation Systems",
+        "url": "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75?source=topic_portal---recommended_stories---data_science---0-107--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      },
+      {
+        "title": "Python is No More The King of Data Science ------------------------------------------ ### 5 Reasons Why Python is Losing Its Crown",
+        "url": "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3?source=topic_portal---recommended_stories---data_science---1-85--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Stackademic"
+      },
+      {
+        "title": "The Statistical Significance Scam --------------------------------- ### A detailed look into the flaws of science\u2019s favorite tool",
+        "url": "https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714?source=topic_portal---recommended_stories---data_science---2-84--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      },
+      {
+        "title": "To Index or Not to Index ------------------------ ### Leverage SQL indexing to speed up your queries. Learn when to index, when not to, and how indexing works under the hood.",
+        "url": "https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae?source=topic_portal---recommended_stories---data_science---3-107--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      },
+      {
+        "title": "Understanding LLMs from Scratch Using Middle School Math -------------------------------------------------------- ### In this article, we talk about how LLMs work, from scratch \u2014 assuming only that you know how to add and multiply two numbers. The article\u2026",
+        "url": "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876?source=topic_portal---recommended_stories---data_science---4-85--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      },
+      {
+        "title": "Predicting Every Election Since 1916 ------------------------------------ ### How \u201celection pundit predictions\u201d betray a misunderstanding of probability",
+        "url": "https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14?source=topic_portal---recommended_stories---data_science---5-84--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      },
+      {
+        "title": "How to Query a Knowledge Graph with LLMs Using gRAG --------------------------------------------------- ### Google, Microsoft, LinkedIn, and many more tech companies are using Graph RAG. Why? Let\u2019s understand it by building one from scratch.",
+        "url": "https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322?source=topic_portal---recommended_stories---data_science---6-107--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      },
+      {
+        "title": "20 Python Scripts To Automate Your Daily Tasks ---------------------------------------------- ### A must-have collection for every developer",
+        "url": "https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63?source=topic_portal---recommended_stories---data_science---7-85--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------",
+        "engagement": "0",
+        "publication": "Stackademic"
+      },
+      {
+        "title": "January Edition: Getting Started in Data Science ------------------------------------------------ ### Starting off the new year with a warm, gentle welcome to all new and aspiring data scientists",
+        "url": "https://medium.com/towards-data-science/january-edition-getting-started-in-data-science-a493660213d?source=topic_portal---curated_list---data_science---0----------------------------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      },
+      {
+        "title": "How To Learn Data Science If You\u2019re Broke ----------------------------------------- ### Over the last year, I taught myself data science. I learned from hundreds of online resources and studied 6\u20138 hours every day. All while\u2026",
+        "url": "https://medium.com/towards-data-science/how-to-learn-data-science-if-youre-broke-7ecc408b53c7?source=topic_portal---curated_list---data_science---2----------------------------",
+        "engagement": "0",
+        "publication": "Towards Data Science"
+      }
+    ],
+    "instructions": "Create focused technical article bundles."
+  },
+  "gpt_response": "```json\n{\n    \"bundles\": {\n        \"ranking_metrics\": {\n            \"urls\": [\n                \"https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75?source=topic_portal---recommended_stories---data_science---0-107--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\"\n            ],\n            \"topic\": \"Ranking Metrics in Recommendation Systems\",\n            \"reason\": \"Both articles focus on metrics used for evaluating the effectiveness of recommendation systems.\",\n            \"articles\": [\n                \"Normalized Discounted Cumulative Gain (NDCG) \u2014 The Ultimate Ranking Metric\"\n            ]\n        },\n        \"data_science_fundamentals\": {\n            \"urls\": [\n                \"https://medium.com/towards-data-science/january-edition-getting-started-in-data-science-a493660213d?source=topic_portal---curated_list---data_science---0----------------------------\",\n                \"https://medium.com/towards-data-science/how-to-learn-data-science-if-youre-broke-7ecc408b53c7?source=topic_portal---curated_list---data_science---2----------------------------\"\n            ],\n            \"topic\": \"Introduction to Data Science\",\n            \"reason\": \"These articles provide guidance for beginners in data science, covering essential starting points and learning paths.\",\n            \"articles\": [\n                \"January Edition: Getting Started in Data Science\",\n                \"How To Learn Data Science If You\u2019re Broke\"\n            ]\n        },\n        \"python_in_data_science\": {\n            \"urls\": [\n                \"https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3?source=topic_portal---recommended_stories---data_science---1-85--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\",\n                \"https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63?source=topic_portal---recommended_stories---data_science---7-85--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\"\n            ],\n            \"topic\": \"Python's Role in Data Science\",\n            \"reason\": \"These articles discuss Python's relevance in data science, including its decline and practical scripts for automation.\",\n            \"articles\": [\n                \"Python is No More The King of Data Science\",\n                \"20 Python Scripts To Automate Your Daily Tasks\"\n            ]\n        },\n        \"statistical_analysis\": {\n            \"urls\": [\n                \"https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714?source=topic_portal---recommended_stories---data_science---2-84--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\",\n                \"https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14?source=topic_portal---recommended_stories---data_science---5-84--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\"\n            ],\n            \"topic\": \"Critical Analysis of Statistical Methods\",\n            \"reason\": \"These articles critique common statistical methods and their implications, particularly in the context of predictions.\",\n            \"articles\": [\n                \"The Statistical Significance Scam\",\n                \"Predicting Every Election Since 1916\"\n            ]\n        },\n        \"sql_and_indexing\": {\n            \"urls\": [\n                \"https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae?source=topic_portal---recommended_stories---data_science---3-107--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\"\n            ],\n            \"topic\": \"SQL Indexing Techniques\",\n            \"reason\": \"This article discusses SQL indexing, a critical aspect of database management and optimization.\",\n            \"articles\": [\n                \"To Index or Not to Index\"\n            ]\n        },\n        \"llm_understanding\": {\n            \"urls\": [\n                \"https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876?source=topic_portal---recommended_stories---data_science---4-85--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\",\n                \"https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322?source=topic_portal---recommended_stories---data_science---6-107--------------------18c8a0ab_2dbe_41c2_ae13_62aaf0ca6627-------\"\n            ],\n            \"topic\": \"Understanding Large Language Models (LLMs)\",\n            \"reason\": \"These articles provide insights into how LLMs function and how they can be utilized for querying knowledge graphs.\",\n            \"articles\": [\n                \"Understanding LLMs from Scratch Using Middle School Math\",\n                \"How To Query a Knowledge Graph with LLMs Using gRAG\"\n            ]\n        }\n    },\n    \"analysis\": \"The thematic bundles created reflect various technical topics within the realm of data science, including ranking metrics, foundational knowledge for beginners, the role of Python, critiques of statistical analysis, SQL indexing techniques, and understanding large language models. Each bundle groups articles that share a common theme or focus, providing a structured way to explore related concepts.\"\n}\n```"
+}

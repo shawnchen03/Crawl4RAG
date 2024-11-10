@@ -1,0 +1,27 @@
+{
+  "articles": [
+    {
+      "title": "Data Science- its not rocket science!",
+      "url": "https://medium.com/@sauravpk97/data-science-its-not-rocket-science-2e2c79957b69?source=topic_portal---latest_stories---data_science---3----------------------------",
+      "publication": "Medium",
+      "engagement": "50 claps",
+      "topics": [
+        "Data Science"
+      ],
+      "technical_level": "Intermediate"
+    },
+    {
+      "title": "Syntax, Data Cleaning and Visualization in R: A Beginner\u2019s Guide",
+      "url": "https://medium.com/@szledak.a/syntax-data-cleaning-and-visualization-in-r-a-beginners-guide-eaaf01f251ef?source=topic_portal---latest_stories---data_science---4----------------------------",
+      "publication": "Medium",
+      "engagement": "Not provided",
+      "topics": [
+        "Data Science",
+        "R",
+        "Data Cleaning",
+        "Data Visualization"
+      ],
+      "technical_level": "Basic"
+    }
+  ]
+}

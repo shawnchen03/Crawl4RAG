@@ -46,6 +46,11 @@ def main():
     base_output_dir = "output"
     os.makedirs(base_output_dir, exist_ok=True)
     
+    # Initialize run_dir at the start
+    timestamp = time.strftime("%Y%m%d_%H%M%S")
+    run_dir = os.path.join(base_output_dir, f"run_{timestamp}")
+    os.makedirs(run_dir, exist_ok=True)
+    
     # Ask user for bundle source
     print("\nChoose bundle source:")
     print("1. Use predefined bundles")
@@ -56,8 +61,8 @@ def main():
         # Get website URL from user
         base_url = input("\nEnter website URL to analyze: ")
         
-        # Initialize components with output directory
-        detector = BundleDetector(api_key, base_url, max_urls=args.max_urls, output_dir=base_output_dir)
+        # Initialize detector with run_dir
+        detector = BundleDetector(api_key, base_url, max_urls=args.max_urls, output_dir=run_dir)
         
         # Detect bundles
         detected_bundles = detector.detect_bundles()
@@ -100,11 +105,7 @@ def main():
         URLBundles.BUNDLES.update(simplified_bundles)
     
     else:
-        # Use consistent directory structure for predefined bundles
-        timestamp = time.strftime("%Y%m%d_%H%M%S")
-        run_dir = os.path.join(base_output_dir, f"predefined_{timestamp}")
-        os.makedirs(run_dir, exist_ok=True)
-        
+        # Use same run_dir for predefined bundles
         scraper = FinanceCrawler(output_dir=run_dir, timeout=args.timeout)
         formatter = ArticleFormatter(api_key)
     
