@@ -125,8 +125,8 @@ class BundleDetector:
             )
             
             # Add debug logging
-            print("\nGPT Raw Response (first 100 chars):")
-            print(repr(response.choices[0].message.content[:100]))  # Use repr() to see hidden chars
+            print("\nGPT Raw Response:")
+            print(response.choices[0].message.content)
             
             # Save raw response before parsing
             raw_response_file = os.path.join(self.gpt_dir, "raw_gpt_response.txt")
@@ -135,14 +135,9 @@ class BundleDetector:
             
             try:
                 # Clean the response string before parsing
-                response_text = response.choices[0].message.content
-                # Remove any BOM and whitespace
-                response_text = response_text.encode().decode('utf-8-sig').strip()
-                # Remove any null bytes
-                response_text = response_text.replace('\x00', '')
-                
-                print("\nCleaned text (first 100 chars):")
-                print(repr(response_text[:100]))
+                response_text = response.choices[0].message.content.strip()
+                # Remove any BOM or hidden characters
+                response_text = response_text.encode().decode('utf-8-sig')
                 
                 result = json.loads(response_text)
                 
@@ -176,17 +171,17 @@ class BundleDetector:
                 return result['bundles']
                 
             except json.JSONDecodeError as e:
-                print(f"\nJSON Parse Error at position {e.pos}:")
-                print(f"Line {e.lineno}, Column {e.colno}")
-                print("Character causing the error:", repr(response_text[e.pos:e.pos+1]))
-                # Try alternate parsing
+                print(f"\nJSON Parse Error: {str(e)}")
+                print("Response that failed parsing:")
+                print(response.choices[0].message.content)
+                
+                # Try alternate parsing method
                 try:
                     import ast
-                    print("\nTrying alternate parsing with ast.literal_eval")
                     result = ast.literal_eval(response_text)
                     return result['bundles']
-                except Exception as ast_error:
-                    print(f"Alternate parsing failed: {str(ast_error)}")
+                except:
+                    print("Alternate parsing also failed")
                     return None
         except Exception as e:
             print(f"\nGPT API Error: {str(e)}")
