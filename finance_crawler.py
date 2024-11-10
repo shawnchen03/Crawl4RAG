@@ -3,44 +3,103 @@ import urllib.parse
 import os
 from typing import List, Dict
 import time
-import tiktoken
 from datetime import datetime
 from bs4 import BeautifulSoup
+from url_bundles import URLBundles
+import re
+from difflib import SequenceMatcher
+from collections import defaultdict
+from urllib.parse import urlparse
 
 class FinanceCrawler:
-    def __init__(self, output_dir: str = "finance_documents"):
+    def __init__(self, output_dir: str = "./mdforfinance", timeout: int = 45):
+        """Initialize crawler with output directory and timeout"""
         self.output_dir = output_dir
         self.reader_base_url = "https://r.jina.ai/"
-        self.chunk_size = 512
-        self.overlap = 50
-        self.encoder = tiktoken.encoding_for_model("gpt-3.5-turbo")
+        self.site_patterns = defaultdict(list)  # Store common patterns by domain
+        self.content_hashes = set()  # Store hashes of processed content
+        self.timeout = timeout  # Store timeout value
         os.makedirs(output_dir, exist_ok=True)
+
+    def scrape_bundle(self, bundle_name: str) -> bool:
+        """Scrape a specific bundle of URLs"""
+        urls = URLBundles.get_bundle(bundle_name)
+        if not urls:
+            print(f"Error: Bundle '{bundle_name}' not found!")
+            return False
+            
+        bundle_dir = os.path.join(self.output_dir, bundle_name)
+        os.makedirs(bundle_dir, exist_ok=True)
         
-    def _count_tokens(self, text: str) -> int:
-        return len(self.encoder.encode(text))
-    
-    def _chunk_text(self, text: str) -> List[Dict]:
-        chunks = []
-        tokens = self.encoder.encode(text)
+        # Set output directory for this specific bundle
+        self.output_dir = bundle_dir
         
-        start = 0
-        while start < len(tokens):
-            end = start + self.chunk_size
-            chunk_tokens = tokens[start:end]
-            chunk_text = self.encoder.decode(chunk_tokens)
-            
-            chunks.append({
-                "content": chunk_text,
-                "token_count": len(chunk_tokens),
-                "chunk_index": len(chunks),
-                "start_position": start
-            })
-            
-            start = end - self.overlap
-            
-        return chunks
+        print(f"\nScraping {bundle_name.replace('_', ' ')} bundle...")
+        print(f"Output directory: {os.path.abspath(bundle_dir)}")
+        
+        self.process_urls(urls)
+        return True
+
+    def scrape_custom_urls(self, urls: List[str], bundle_name: str = "custom") -> bool:
+        """Scrape a custom list of URLs"""
+        bundle_dir = os.path.join(self.output_dir, bundle_name)
+        os.makedirs(bundle_dir, exist_ok=True)
+        
+        self.output_dir = bundle_dir
+        print(f"\nScraping custom URL bundle: {bundle_name}")
+        print(f"Output directory: {os.path.abspath(bundle_dir)}")
+        
+        self.process_urls(urls)
+        return True
+
+    def _get_domain(self, url: str) -> str:
+        """Extract domain from URL"""
+        return urlparse(url).netloc
+
+    def _detect_site_patterns(self, content: str, url: str) -> str:
+        """Detect and remove common site-wide patterns"""
+        domain = self._get_domain(url)
+        
+        # Split content into paragraphs
+        paragraphs = content.split('\n\n')
+        
+        # If this is the first URL from this domain
+        if not self.site_patterns[domain]:
+            self.site_patterns[domain] = paragraphs
+            return content
+        
+        # Find common patterns across pages from the same domain
+        common_patterns = []
+        for existing_para in self.site_patterns[domain]:
+            for current_para in paragraphs:
+                similarity = SequenceMatcher(None, existing_para, current_para).ratio()
+                if similarity > 0.8:  # 80% similarity threshold
+                    common_patterns.append(current_para)
+        
+        # Remove common patterns from content
+        cleaned_paragraphs = [p for p in paragraphs if p not in common_patterns]
+        
+        # Update site patterns with new unique content
+        self.site_patterns[domain].extend([p for p in paragraphs 
+                                         if p not in common_patterns 
+                                         and p not in self.site_patterns[domain]])
+        
+        return '\n\n'.join(cleaned_paragraphs)
+
+    def _is_duplicate_content(self, content: str) -> bool:
+        """Check if content is duplicate using simhash"""
+        # Create a simple hash of the content's key phrases
+        content_words = set(content.lower().split())
+        content_hash = hash(frozenset(content_words))
+        
+        if content_hash in self.content_hashes:
+            return True
+        
+        self.content_hashes.add(content_hash)
+        return False
 
     def _fetch_content(self, url: str) -> Dict:
+        """Fetch content using Jina's reader"""
         encoded_url = urllib.parse.quote(url, safe='')
         reader_url = f"{self.reader_base_url}{encoded_url}"
         
@@ -48,19 +107,42 @@ class FinanceCrawler:
             "Accept": "text/markdown",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
             "x-with-generated-alt": "true",
-            "x-timeout": "30",
+            "x-timeout": str(self.timeout),
         }
         
         try:
             print(f"\nFetching URL: {reader_url}")
-            response = requests.get(reader_url, headers=headers, timeout=45)
-            response.raise_for_status()
+            response = requests.get(reader_url, headers=headers, timeout=self.timeout)
+            
+            # Extensive error handling
+            if response.status_code == 404:
+                print(f"Skipping {url}: Page not found (404)")
+                return None
+            elif response.status_code == 403:
+                print(f"Skipping {url}: Access denied (403)")
+                return None
+            elif response.status_code == 401:
+                print(f"Skipping {url}: Authentication required (401)")
+                return None
+            elif response.status_code != 200:
+                print(f"Skipping {url}: Unexpected status code {response.status_code}")
+                return None
             
             content = response.text
             
+            # Check for duplicate content
+            if self._is_duplicate_content(content):
+                print(f"Skipping {url}: Duplicate content detected")
+                return None
+            
+            # Remove common site-wide patterns
+            content = self._detect_site_patterns(content, url)
+            
+            # Process images if present (this is from Jina's reader output)
             image_sections = []
             soup = BeautifulSoup(content, 'html.parser')
             
+            # Find image references in Jina's markdown output
             image_refs = soup.find_all(string=lambda text: text and '![' in text)
             for img in image_refs:
                 caption = img.strip()
@@ -77,15 +159,21 @@ class FinanceCrawler:
                     "url": url,
                     "fetch_date": datetime.now().isoformat(),
                     "length": len(content),
-                    "token_count": self._count_tokens(content),
                     "category": self._get_category(url),
-                    "has_images": len(image_sections) > 0,
-                    "image_count": len(image_sections)
+                    "cleaned_patterns": bool(self.site_patterns[self._get_domain(url)])
                 }
             }
             
+        except requests.exceptions.RequestException as e:
+            if "timeout" in str(e).lower():
+                print(f"Skipping {url}: Request timed out")
+            elif "connection" in str(e).lower():
+                print(f"Skipping {url}: Connection error")
+            else:
+                print(f"Skipping {url}: {str(e)}")
+            return None
         except Exception as e:
-            print(f"Error fetching {url}: {str(e)}")
+            print(f"Skipping {url}: Unexpected error - {str(e)}")
             return None
 
     def _get_category(self, url: str) -> str:
@@ -109,8 +197,6 @@ class FinanceCrawler:
         filepath = os.path.join(self.output_dir, filename)
         
         try:
-            chunks = self._chunk_text(document["content"])
-            
             with open(filepath, 'w', encoding='utf-8') as f:
                 # Write metadata section
                 f.write("---\n")
@@ -118,17 +204,9 @@ class FinanceCrawler:
                     f.write(f"{key}: {value}\n")
                 f.write("---\n\n")
                 
-                # Write original content
+                # Write content
                 f.write("# Original Content\n\n")
                 f.write(document["content"])
-                
-                # Write chunked content
-                f.write("\n\n# Chunked Content\n\n")
-                for chunk in chunks:
-                    f.write(f"\n## Chunk {chunk['chunk_index']} ")
-                    f.write(f"(Tokens: {chunk['token_count']})\n\n")
-                    f.write(chunk["content"])
-                    f.write("\n")
                 
             print(f"Successfully saved to {filepath}")
             
@@ -181,10 +259,20 @@ class FinanceCrawler:
             print(f"Error saving combined markdown file: {str(e)}")
 
     def process_urls(self, urls: List[str]):
+        """Process a list of URLs with duplicate detection"""
         documents = []
+        domain_counts = defaultdict(int)
+        
         for url in urls:
+            domain = self._get_domain(url)
+            domain_counts[domain] += 1
+            
+            # Skip if too many URLs from same domain
+            if domain_counts[domain] > 10:  # Configurable limit
+                print(f"Skipping {url}: Domain limit reached")
+                continue
+            
             try:
-                print(f"\nProcessing: {url}")
                 document = self._fetch_content(url)
                 if document:
                     self._save_to_markdown(document, url)

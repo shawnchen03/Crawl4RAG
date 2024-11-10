@@ -1,0 +1,917 @@
+{
+  "base_url": "https://medium.com/tag/data-science",
+  "timestamp": "20241109_231416",
+  "link_data": [
+    {
+      "text": "Open in app",
+      "url": "https://rsci.app.link/",
+      "type": "link"
+    },
+    {
+      "text": "Sign in",
+      "url": "https://medium.com/m/signin",
+      "type": "link"
+    },
+    {
+      "text": "Write",
+      "url": "https://medium.com/m/signin",
+      "type": "link"
+    },
+    {
+      "text": "Sign in",
+      "url": "https://medium.com/m/signin",
+      "type": "link"
+    },
+    {
+      "text": "Image 1",
+      "url": "https://miro.medium.com/v2/resize:fill:32:32/1*dmbNkD5D-u45r44go_cf0g.png",
+      "type": "image"
+    },
+    {
+      "text": "Explore topics",
+      "url": "https://medium.com/explore-topics",
+      "type": "link"
+    },
+    {
+      "text": "Data Science",
+      "url": "https://medium.com/tag/data-science",
+      "type": "link"
+    },
+    {
+      "text": "Technology",
+      "url": "https://medium.com/tag/technology",
+      "type": "link"
+    },
+    {
+      "text": "Machine Learning",
+      "url": "https://medium.com/tag/machine-learning",
+      "type": "link"
+    },
+    {
+      "text": "Programming",
+      "url": "https://medium.com/tag/programming",
+      "type": "link"
+    },
+    {
+      "text": "Artificial Intelligence",
+      "url": "https://medium.com/tag/artificial-intelligence",
+      "type": "link"
+    },
+    {
+      "text": "Self Improvement",
+      "url": "https://medium.com/tag/self-improvement",
+      "type": "link"
+    },
+    {
+      "text": "Writing",
+      "url": "https://medium.com/tag/writing",
+      "type": "link"
+    },
+    {
+      "text": "Python",
+      "url": "https://medium.com/tag/python",
+      "type": "link"
+    },
+    {
+      "text": "Deep Learning",
+      "url": "https://medium.com/tag/deep-learning",
+      "type": "link"
+    },
+    {
+      "text": "Relationships",
+      "url": "https://medium.com/tag/relationships",
+      "type": "link"
+    },
+    {
+      "text": "Follow",
+      "url": "https://medium.com/m/signin",
+      "type": "link"
+    },
+    {
+      "text": "Image 2: The Statistical Significance Scam",
+      "url": "https://miro.medium.com/v2/resize:fit:679/format:webp/1*fUigVfmuyNJLUFY6m-lZUw.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 3: Cai Parry-Jones",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/0*GWV4mbIw3Ex5l9PC",
+      "type": "link"
+    },
+    {
+      "text": "Cai Parry-Jones",
+      "url": "https://medium.com/@caiparryjones96",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "The Statistical Significance Scam --------------------------------- ### A detailed look into the flaws of science\u2019s favorite tool",
+      "url": "https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714",
+      "type": "link"
+    },
+    {
+      "text": "137",
+      "url": "https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714",
+      "type": "link"
+    },
+    {
+      "text": "Image 4: Normalized Discounted Cumulative Gain (NDCG)\u200a\u2014\u200aThe Ultimate Ranking Metric",
+      "url": "https://miro.medium.com/v2/resize:fit:679/format:webp/0*U7MA1X95LAKAdchq",
+      "type": "image"
+    },
+    {
+      "text": "![Image 5: Saankhya Mondal",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*TADxXNj_Fq5BqXipXvp1QQ.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Saankhya Mondal",
+      "url": "https://medium.com/@saankhya",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "Normalized Discounted Cumulative Gain (NDCG) \u2014 The Ultimate Ranking Metric -------------------------------------------------------------------------- ### NDCG \u2014 The Rank-Aware Metric for Evaluating Recommendation Systems",
+      "url": "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75",
+      "type": "link"
+    },
+    {
+      "text": "305 6",
+      "url": "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75",
+      "type": "link"
+    },
+    {
+      "text": "![Image 6: Abdur Rahman",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*dl3HiS_DMv2laLpaKyTBFg.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Abdur Rahman",
+      "url": "https://medium.com/@abdur-rahman",
+      "type": "link"
+    },
+    {
+      "text": "Stackademic",
+      "url": "https://medium.com/stackademic",
+      "type": "link"
+    },
+    {
+      "text": "Python is No More The King of Data Science ------------------------------------------ ### 5 Reasons Why Python is Losing Its Crown",
+      "url": "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3",
+      "type": "link"
+    },
+    {
+      "text": "4.1K 22",
+      "url": "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3",
+      "type": "link"
+    },
+    {
+      "text": "Image 7: Python is No More The King of Data Science",
+      "url": "https://miro.medium.com/v2/resize:fill:80:53/format:webp/1*uiA0nCufUQs-K64ebSUhew.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "4.1K 22",
+      "url": "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3",
+      "type": "link"
+    },
+    {
+      "text": "![Image 8: Christopher Karg",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*IOKAD707flZwbmv1mQYnCw.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Christopher Karg",
+      "url": "https://medium.com/@christopher_karg",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "To Index or Not to Index ------------------------ ### Leverage SQL indexing to speed up your queries. Learn when to index, when not to, and how indexing works under the hood.",
+      "url": "https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae",
+      "type": "link"
+    },
+    {
+      "text": "181 3",
+      "url": "https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae",
+      "type": "link"
+    },
+    {
+      "text": "Image 9: To Index or Not to Index",
+      "url": "https://miro.medium.com/v2/resize:fill:80:53/format:webp/1*r_TJZMdbJdCdhCY_yONmGQ.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "181 3",
+      "url": "https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae",
+      "type": "link"
+    },
+    {
+      "text": "![Image 10: Rohit Patel",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*ECmWr6Z-ToM5JE-h8ywyLQ.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Rohit Patel",
+      "url": "https://medium.com/@rohit-patel",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "Understanding LLMs from Scratch Using Middle School Math -------------------------------------------------------- ### In this article, we talk about how LLMs work, from scratch \u2014 assuming only that you know how to add and multiply two numbers. The article\u2026",
+      "url": "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876",
+      "type": "link"
+    },
+    {
+      "text": "4.3K 47",
+      "url": "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876",
+      "type": "link"
+    },
+    {
+      "text": "Image 11: Understanding LLMs from Scratch Using Middle School Math",
+      "url": "https://miro.medium.com/v2/resize:fill:80:53/format:webp/1*oETLwMpxy3oH_B9pN-xLcg.png",
+      "type": "image"
+    },
+    {
+      "text": "4.3K 47",
+      "url": "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876",
+      "type": "link"
+    },
+    {
+      "text": "Image 12: The Statistical Significance Scam",
+      "url": "https://miro.medium.com/v2/resize:fit:572/format:webp/1*fUigVfmuyNJLUFY6m-lZUw.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "Image 13: The Statistical Significance Scam",
+      "url": "https://miro.medium.com/v2/resize:fit:572/format:webp/1*fUigVfmuyNJLUFY6m-lZUw.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 14: Cai Parry-Jones",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/0*GWV4mbIw3Ex5l9PC",
+      "type": "link"
+    },
+    {
+      "text": "Cai Parry-Jones",
+      "url": "https://medium.com/@caiparryjones96",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "The Statistical Significance Scam --------------------------------- ### A detailed look into the flaws of science\u2019s favorite tool",
+      "url": "https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714",
+      "type": "link"
+    },
+    {
+      "text": "137",
+      "url": "https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714",
+      "type": "link"
+    },
+    {
+      "text": "Image 15: Normalized Discounted Cumulative Gain (NDCG)\u200a\u2014\u200aThe Ultimate Ranking Metric",
+      "url": "https://miro.medium.com/v2/resize:fit:572/format:webp/0*U7MA1X95LAKAdchq",
+      "type": "image"
+    },
+    {
+      "text": "Image 16: Normalized Discounted Cumulative Gain (NDCG)\u200a\u2014\u200aThe Ultimate Ranking Metric",
+      "url": "https://miro.medium.com/v2/resize:fit:572/format:webp/0*U7MA1X95LAKAdchq",
+      "type": "image"
+    },
+    {
+      "text": "![Image 17: Saankhya Mondal",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*TADxXNj_Fq5BqXipXvp1QQ.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Saankhya Mondal",
+      "url": "https://medium.com/@saankhya",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "Normalized Discounted Cumulative Gain (NDCG) \u2014 The Ultimate Ranking Metric -------------------------------------------------------------------------- ### NDCG \u2014 The Rank-Aware Metric for Evaluating Recommendation Systems",
+      "url": "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75",
+      "type": "link"
+    },
+    {
+      "text": "305 6",
+      "url": "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75",
+      "type": "link"
+    },
+    {
+      "text": "Image 18: Python is No More The King of Data Science",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/1*uiA0nCufUQs-K64ebSUhew.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 19: Abdur Rahman",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*dl3HiS_DMv2laLpaKyTBFg.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Abdur Rahman",
+      "url": "https://medium.com/@abdur-rahman",
+      "type": "link"
+    },
+    {
+      "text": "Stackademic",
+      "url": "https://medium.com/stackademic",
+      "type": "link"
+    },
+    {
+      "text": "Python is No More The King of Data Science ------------------------------------------ ### 5 Reasons Why Python is Losing Its Crown",
+      "url": "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3",
+      "type": "link"
+    },
+    {
+      "text": "4.1K 22",
+      "url": "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3",
+      "type": "link"
+    },
+    {
+      "text": "Image 20: To Index or Not to Index",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/1*r_TJZMdbJdCdhCY_yONmGQ.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 21: Christopher Karg",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*IOKAD707flZwbmv1mQYnCw.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Christopher Karg",
+      "url": "https://medium.com/@christopher_karg",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "To Index or Not to Index ------------------------ ### Leverage SQL indexing to speed up your queries. Learn when to index, when not to, and how indexing works under the hood.",
+      "url": "https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae",
+      "type": "link"
+    },
+    {
+      "text": "181 3",
+      "url": "https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae",
+      "type": "link"
+    },
+    {
+      "text": "Image 22: Understanding LLMs from Scratch Using Middle School Math",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/1*oETLwMpxy3oH_B9pN-xLcg.png",
+      "type": "image"
+    },
+    {
+      "text": "![Image 23: Rohit Patel",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*ECmWr6Z-ToM5JE-h8ywyLQ.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Rohit Patel",
+      "url": "https://medium.com/@rohit-patel",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "Understanding LLMs from Scratch Using Middle School Math -------------------------------------------------------- ### In this article, we talk about how LLMs work, from scratch \u2014 assuming only that you know how to add and multiply two numbers. The article\u2026",
+      "url": "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876",
+      "type": "link"
+    },
+    {
+      "text": "4.3K 47",
+      "url": "https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876",
+      "type": "link"
+    },
+    {
+      "text": "Image 24: Predicting Every Election Since 1916",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/1*IyBIWk8mf8JVaY6Gy_7g2g.png",
+      "type": "image"
+    },
+    {
+      "text": "![Image 25: Harys Dalvi",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*APonMNiRc_xq6MFzvUH5Ag.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Harys Dalvi",
+      "url": "https://medium.com/@crackalamoo",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "Predicting Every Election Since 1916 ------------------------------------ ### How \u201celection pundit predictions\u201d betray a misunderstanding of probability",
+      "url": "https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14",
+      "type": "link"
+    },
+    {
+      "text": "392 8",
+      "url": "https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14",
+      "type": "link"
+    },
+    {
+      "text": "Image 26: How to Query a Knowledge Graph with LLMs Using gRAG",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/0*UeZPcm_AcNpatRN4",
+      "type": "image"
+    },
+    {
+      "text": "![Image 27: Cristian Leo",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/0*vXUpsKuv7A7DlqP0",
+      "type": "link"
+    },
+    {
+      "text": "Cristian Leo",
+      "url": "https://medium.com/@cristianleo120",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "How to Query a Knowledge Graph with LLMs Using gRAG --------------------------------------------------- ### Google, Microsoft, LinkedIn, and many more tech companies are using Graph RAG. Why? Let\u2019s understand it by building one from scratch.",
+      "url": "https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322",
+      "type": "link"
+    },
+    {
+      "text": "366 1",
+      "url": "https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322",
+      "type": "link"
+    },
+    {
+      "text": "Image 28: 20 Python Scripts To Automate Your Daily Tasks",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/1*iGrbJxU6oV3q7LeNV28gWg.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 29: Abdur Rahman",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*dl3HiS_DMv2laLpaKyTBFg.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Abdur Rahman",
+      "url": "https://medium.com/@abdur-rahman",
+      "type": "link"
+    },
+    {
+      "text": "Stackademic",
+      "url": "https://medium.com/stackademic",
+      "type": "link"
+    },
+    {
+      "text": "20 Python Scripts To Automate Your Daily Tasks ---------------------------------------------- ### A must-have collection for every developer",
+      "url": "https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63",
+      "type": "link"
+    },
+    {
+      "text": "2.3K 21",
+      "url": "https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63",
+      "type": "link"
+    },
+    {
+      "text": "See more recommended stories",
+      "url": "https://medium.com/tag/data-science/recommended",
+      "type": "link"
+    },
+    {
+      "text": "Medium Staff",
+      "url": "https://medium.com/@MediumStaff",
+      "type": "link"
+    },
+    {
+      "text": "Image 30: January Edition: Getting Started in Data Science",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/0*7nbpzkzxb7qe320E",
+      "type": "image"
+    },
+    {
+      "text": "![Image 31: TDS Editors",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*W8dhinLQHGYmwipTuH0k3A.png",
+      "type": "link"
+    },
+    {
+      "text": "TDS Editors",
+      "url": "https://medium.com/@towardsdatascience",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "January Edition: Getting Started in Data Science ------------------------------------------------ ### Starting off the new year with a warm, gentle welcome to all new and aspiring data scientists",
+      "url": "https://medium.com/towards-data-science/january-edition-getting-started-in-data-science-a493660213d",
+      "type": "link"
+    },
+    {
+      "text": "304 6",
+      "url": "https://medium.com/towards-data-science/january-edition-getting-started-in-data-science-a493660213d",
+      "type": "link"
+    },
+    {
+      "text": "Image 32: 3 Ways to Break Into Data Science",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/0*N1GjB6zbCaTBQ1JH",
+      "type": "image"
+    },
+    {
+      "text": "![Image 33: Elad Cohen",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/2*X2kzprbLHe9PNAhHMr5EQw.png",
+      "type": "link"
+    },
+    {
+      "text": "Elad Cohen",
+      "url": "https://medium.com/@elad-cohen",
+      "type": "link"
+    },
+    {
+      "text": "Riskified Tech",
+      "url": "https://medium.com/riskified-technology",
+      "type": "link"
+    },
+    {
+      "text": "3 Ways to Break Into Data Science --------------------------------- ### Starting your journey into Data Science? Choose the right path to increase your odds.",
+      "url": "https://medium.com/riskified-technology/3-ways-to-break-into-data-science-6a7a8fd679b3",
+      "type": "link"
+    },
+    {
+      "text": "768 8",
+      "url": "https://medium.com/riskified-technology/3-ways-to-break-into-data-science-6a7a8fd679b3",
+      "type": "link"
+    },
+    {
+      "text": "Image 34: How To Learn Data Science If You\u2019re Broke",
+      "url": "https://miro.medium.com/v2/resize:fit:365/format:webp/0*zV1Hxq8zOqi7oEQS",
+      "type": "image"
+    },
+    {
+      "text": "![Image 35: Harrison Jansma",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*Kj7YffsuqBrS6H4QMfuB_Q.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Harrison Jansma",
+      "url": "https://medium.com/@harrisonjansma",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "How To Learn Data Science If You\u2019re Broke ----------------------------------------- ### Over the last year, I taught myself data science. I learned from hundreds of online resources and studied 6\u20138 hours every day. All while\u2026",
+      "url": "https://medium.com/towards-data-science/how-to-learn-data-science-if-youre-broke-7ecc408b53c7",
+      "type": "link"
+    },
+    {
+      "text": "23K 101",
+      "url": "https://medium.com/towards-data-science/how-to-learn-data-science-if-youre-broke-7ecc408b53c7",
+      "type": "link"
+    },
+    {
+      "text": "See the full list",
+      "url": "https://medium.com/@MediumStaff/list/getting-started-in-data-science-64eecc07619f",
+      "type": "link"
+    },
+    {
+      "text": "![Image 36: Ben Putney",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*xn0mK5mf9FRYm_9z__onsA.png",
+      "type": "link"
+    },
+    {
+      "text": "Image 37",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/0*r4yjMpEmqzHCUvWC.jpg",
+      "type": "image"
+    },
+    {
+      "text": "Image 38",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/1*bv2KUVNLi2sFNjBTdoBmWw.png",
+      "type": "image"
+    },
+    {
+      "text": "Image 39",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/0*zsngbTOmFCy6sUCx.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 40: Destin Gong",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*_qYYfgLTcvZF3zhHO0yVdA@2x.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Image 41: Principal Component Analysis for ML",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/1*swd_PY6vTCyPnsgBYoFZfA.png",
+      "type": "image"
+    },
+    {
+      "text": "Image 42: Time Series Analysis",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/1*8sSAHftNwd_RNJ3k4VA0pA.png",
+      "type": "image"
+    },
+    {
+      "text": "Image 43: deep learning cheatsheet for beginner",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/1*uNyD4yNMH-DnOel1wzxOOA.png",
+      "type": "image"
+    },
+    {
+      "text": "![Image 44: J. Kai",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*9HgFGjnCZfQu17sKBtkoqg.png",
+      "type": "link"
+    },
+    {
+      "text": "Image 45",
+      "url": "https://miro.medium.com/v2/da:true/resize:fill:166:144/0*gzCeWxDtGmD23QR5",
+      "type": "image"
+    },
+    {
+      "text": "Image 46",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/1*di4WDrnS1F6_p9GWnxvPmg.png",
+      "type": "image"
+    },
+    {
+      "text": "Image 47",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/1*PzJLbFrFtNkqPsxielO8zA.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 48: Nicholas Michael Janulewicz",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/0*lF7TduOVYhWzdpOT.jpg",
+      "type": "link"
+    },
+    {
+      "text": "Image 49",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/1*I2o9__q4g1dzbcH9XRqcRg.png",
+      "type": "image"
+    },
+    {
+      "text": "Image 50",
+      "url": "https://miro.medium.com/v2/resize:fill:166:144/0*F6q2BN7oddumBDGY.png",
+      "type": "image"
+    },
+    {
+      "text": "Image 51",
+      "url": "https://miro.medium.com/v2/da:true/resize:fill:166:144/0*dT68KKwa4mw4ShQJ",
+      "type": "image"
+    },
+    {
+      "text": "![Image 52: Abdur Rahman",
+      "url": "https://miro.medium.com/v2/resize:fill:64:64/1*dl3HiS_DMv2laLpaKyTBFg.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Abdur Rahman",
+      "url": "https://medium.com/@abdur-rahman",
+      "type": "link"
+    },
+    {
+      "text": "![Image 53: Towards Data Science",
+      "url": "https://miro.medium.com/v2/resize:fill:64:64/1*CJe3891yB1A1mzMdqemkdg.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Towards Data Science",
+      "url": "https://medium.com/towards-data-science",
+      "type": "link"
+    },
+    {
+      "text": "![Image 54: Austin Starks",
+      "url": "https://miro.medium.com/v2/resize:fill:64:64/1*dfww62lW8x8sVZNbLx5aCA.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Austin Starks",
+      "url": "https://medium.com/@austin-starks",
+      "type": "link"
+    },
+    {
+      "text": "![Image 55: Level Up Coding",
+      "url": "https://miro.medium.com/v2/resize:fill:64:64/1*5D9oYBd58pyjMkV_5-zXXQ.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Level Up Coding",
+      "url": "https://medium.com/gitconnected",
+      "type": "link"
+    },
+    {
+      "text": "![Image 56: Ignacio de Gregorio",
+      "url": "https://miro.medium.com/v2/resize:fill:64:64/1*p6kCCpNZARkVEYv4OCH7GQ@2x.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Ignacio de Gregorio",
+      "url": "https://medium.com/@ignacio.de.gregorio.noblejas",
+      "type": "link"
+    },
+    {
+      "text": "See more",
+      "url": "https://medium.com/tag/data-science/who-to-follow",
+      "type": "link"
+    },
+    {
+      "text": "![Image 57: Vijay Satish Londhe",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*3MmcSQPmhYcwFUZlQiATTw.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Vijay Satish Londhe",
+      "url": "https://medium.com/@viju-londhe",
+      "type": "link"
+    },
+    {
+      "text": "Python for Machine Learning: A Practical Introduction ----------------------------------------------------- ### Discover the Essentials of Python for Machine Learning in Simple Steps",
+      "url": "https://medium.com/@viju-londhe/python-for-machine-learning-a-practical-introduction-89446f6f199d",
+      "type": "link"
+    },
+    {
+      "text": "Image 58: Python for Machine Learning: A Practical Introduction",
+      "url": "https://miro.medium.com/v2/da:true/resize:fill:80:53/0*u0fi5KtxvUK7duHE",
+      "type": "image"
+    },
+    {
+      "text": "Image 59: Python for Machine Learning: A Practical Introduction",
+      "url": "https://miro.medium.com/v2/da:true/resize:fill:160:107/0*u0fi5KtxvUK7duHE",
+      "type": "image"
+    },
+    {
+      "text": "![Image 60: Mohit Mahur",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/0*rrxc5fWZ3QzcKchC",
+      "type": "link"
+    },
+    {
+      "text": "Mohit Mahur",
+      "url": "https://medium.com/@22f1000344",
+      "type": "link"
+    },
+    {
+      "text": "Title: Understanding K-Nearest Neighbors (K-NN) in Classification: Choosing the Right Value of k ------------------------------------------------------------------------------------------------ ### Choosing K Value in K-NN Classification",
+      "url": "https://medium.com/@22f1000344/title-understanding-k-nearest-neighbors-k-nn-in-classification-choosing-the-right-value-of-k-e12b54a33f77",
+      "type": "link"
+    },
+    {
+      "text": "![Image 61: Asim Abbas",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*UmoO43NtFNdCChcTnxbr0w.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Asim Abbas",
+      "url": "https://medium.com/@smartbrand480",
+      "type": "link"
+    },
+    {
+      "text": "Terrorism is an act, which aims to create fear among ordinary people by illegal means. -------------------------------------------------------------------------------------- ### Stop Terrorism",
+      "url": "https://medium.com/@smartbrand480/terrorism-is-an-act-which-aims-to-create-fear-among-ordinary-people-by-illegal-means-d70807ea50d9",
+      "type": "link"
+    },
+    {
+      "text": "Image 62: Terrorism is an act, which aims to create fear among ordinary people by illegal means.",
+      "url": "https://miro.medium.com/v2/resize:fill:80:53/1*3XeADo354FwvYBzMt7rlFg.png",
+      "type": "image"
+    },
+    {
+      "text": "Image 63: Terrorism is an act, which aims to create fear among ordinary people by illegal means.",
+      "url": "https://miro.medium.com/v2/resize:fill:160:107/1*3XeADo354FwvYBzMt7rlFg.png",
+      "type": "image"
+    },
+    {
+      "text": "![Image 64: Jesus Davila",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*9cGCt2CLttJxybqg7QWXMA@2x.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Jesus Davila",
+      "url": "https://medium.com/@gtbkxbvy",
+      "type": "link"
+    },
+    {
+      "text": "A Mini Weather Forecasting Project: Quick Data Analysis for Instant Dopamine Boost ----------------------------------------------------------------------------------",
+      "url": "https://medium.com/@gtbkxbvy/a-mini-weather-forecasting-project-quick-data-analysis-for-instant-dopamine-boost-2fad962e14fd",
+      "type": "link"
+    },
+    {
+      "text": "Image 65: A Mini Weather Forecasting Project: Quick Data Analysis for Instant Dopamine Boost",
+      "url": "https://miro.medium.com/v2/resize:fill:80:53/1*2nW0F9UKi_H61ZMe4P7I_g@2x.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "Image 66: A Mini Weather Forecasting Project: Quick Data Analysis for Instant Dopamine Boost",
+      "url": "https://miro.medium.com/v2/resize:fill:160:107/1*2nW0F9UKi_H61ZMe4P7I_g@2x.jpeg",
+      "type": "image"
+    },
+    {
+      "text": "![Image 67: Sauravpk",
+      "url": "https://miro.medium.com/v2/resize:fill:20:20/1*VNwDtM_wUGu_-Gv-L4fqYw.jpeg",
+      "type": "link"
+    },
+    {
+      "text": "Sauravpk",
+      "url": "https://medium.com/@sauravpk97",
+      "type": "link"
+    },
+    {
+      "text": "Data Science- its not rocket science! ------------------------------------- ### I\u2019ve been meaning to note down my thoughts about the world of data science for a while now. A thought that appeared as a whim from my time\u2026",
+      "url": "https://medium.com/@sauravpk97/data-science-its-not-rocket-science-2e2c79957b69",
+      "type": "link"
+    },
+    {
+      "text": "50",
+      "url": "https://medium.com/@sauravpk97/data-science-its-not-rocket-science-2e2c79957b69",
+      "type": "link"
+    },
+    {
+      "text": "50",
+      "url": "https://medium.com/@sauravpk97/data-science-its-not-rocket-science-2e2c79957b69",
+      "type": "link"
+    },
+    {
+      "text": "See more stories",
+      "url": "https://medium.com/tag/data-science/archive",
+      "type": "link"
+    },
+    {
+      "text": "Help",
+      "url": "https://help.medium.com/hc/en-us",
+      "type": "link"
+    },
+    {
+      "text": "Status",
+      "url": "https://medium.statuspage.io/",
+      "type": "link"
+    },
+    {
+      "text": "About",
+      "url": "https://medium.com/about",
+      "type": "link"
+    },
+    {
+      "text": "Careers",
+      "url": "https://medium.com/jobs-at-medium/work-at-medium-959d1a85284e",
+      "type": "link"
+    },
+    {
+      "text": "Press",
+      "url": "https://medium.com/tag/pressinquiries@medium.com",
+      "type": "link"
+    },
+    {
+      "text": "Blog",
+      "url": "https://blog.medium.com/",
+      "type": "link"
+    },
+    {
+      "text": "Privacy",
+      "url": "https://policy.medium.com/medium-privacy-policy-f03bf92035c9",
+      "type": "link"
+    },
+    {
+      "text": "Terms",
+      "url": "https://policy.medium.com/medium-terms-of-service-9db0094a1e0f",
+      "type": "link"
+    },
+    {
+      "text": "Text to speech",
+      "url": "https://speechify.com/medium",
+      "type": "link"
+    },
+    {
+      "text": "Teams",
+      "url": "https://medium.com/business",
+      "type": "link"
+    }
+  ],
+  "formatted_prompt": "Content: Open in app\nURL: https://rsci.app.link/\nType: link\nContent: Sign in\nURL: https://medium.com/m/signin\nType: link\nContent: Write\nURL: https://medium.com/m/signin\nType: link\nContent: Sign in\nURL: https://medium.com/m/signin\nType: link\nContent: Image 1\nURL: https://miro.medium.com/v2/resize:fill:32:32/1*dmbNkD5D-u45r44go_cf0g.png\nType: image\nContent: Explore topics\nURL: https://medium.com/explore-topics\nType: link\nContent: Data Science\nURL: https://medium.com/tag/data-science\nType: link\nContent: Technology\nURL: https://medium.com/tag/technology\nType: link\nContent: Machine Learning\nURL: https://medium.com/tag/machine-learning\nType: link\nContent: Programming\nURL: https://medium.com/tag/programming\nType: link\nContent: Artificial Intelligence\nURL: https://medium.com/tag/artificial-intelligence\nType: link\nContent: Self Improvement\nURL: https://medium.com/tag/self-improvement\nType: link\nContent: Writing\nURL: https://medium.com/tag/writing\nType: link\nContent: Python\nURL: https://medium.com/tag/python\nType: link\nContent: Deep Learning\nURL: https://medium.com/tag/deep-learning\nType: link\nContent: Relationships\nURL: https://medium.com/tag/relationships\nType: link\nContent: Follow\nURL: https://medium.com/m/signin\nType: link\nContent: Image 2: The Statistical Significance Scam\nURL: https://miro.medium.com/v2/resize:fit:679/format:webp/1*fUigVfmuyNJLUFY6m-lZUw.jpeg\nType: image\nContent: ![Image 3: Cai Parry-Jones\nURL: https://miro.medium.com/v2/resize:fill:20:20/0*GWV4mbIw3Ex5l9PC\nType: link\nContent: Cai Parry-Jones\nURL: https://medium.com/@caiparryjones96\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: The Statistical Significance Scam --------------------------------- ### A detailed look into the flaws of science\u2019s favorite tool\nURL: https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714\nType: link\nContent: 137\nURL: https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714\nType: link\nContent: Image 4: Normalized Discounted Cumulative Gain (NDCG)\u200a\u2014\u200aThe Ultimate Ranking Metric\nURL: https://miro.medium.com/v2/resize:fit:679/format:webp/0*U7MA1X95LAKAdchq\nType: image\nContent: ![Image 5: Saankhya Mondal\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*TADxXNj_Fq5BqXipXvp1QQ.jpeg\nType: link\nContent: Saankhya Mondal\nURL: https://medium.com/@saankhya\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: Normalized Discounted Cumulative Gain (NDCG) \u2014 The Ultimate Ranking Metric -------------------------------------------------------------------------- ### NDCG \u2014 The Rank-Aware Metric for Evaluating Recommendation Systems\nURL: https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75\nType: link\nContent: 305 6\nURL: https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75\nType: link\nContent: ![Image 6: Abdur Rahman\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*dl3HiS_DMv2laLpaKyTBFg.jpeg\nType: link\nContent: Abdur Rahman\nURL: https://medium.com/@abdur-rahman\nType: link\nContent: Stackademic\nURL: https://medium.com/stackademic\nType: link\nContent: Python is No More The King of Data Science ------------------------------------------ ### 5 Reasons Why Python is Losing Its Crown\nURL: https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3\nType: link\nContent: 4.1K 22\nURL: https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3\nType: link\nContent: Image 7: Python is No More The King of Data Science\nURL: https://miro.medium.com/v2/resize:fill:80:53/format:webp/1*uiA0nCufUQs-K64ebSUhew.jpeg\nType: image\nContent: 4.1K 22\nURL: https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3\nType: link\nContent: ![Image 8: Christopher Karg\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*IOKAD707flZwbmv1mQYnCw.jpeg\nType: link\nContent: Christopher Karg\nURL: https://medium.com/@christopher_karg\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: To Index or Not to Index ------------------------ ### Leverage SQL indexing to speed up your queries. Learn when to index, when not to, and how indexing works under the hood.\nURL: https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae\nType: link\nContent: 181 3\nURL: https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae\nType: link\nContent: Image 9: To Index or Not to Index\nURL: https://miro.medium.com/v2/resize:fill:80:53/format:webp/1*r_TJZMdbJdCdhCY_yONmGQ.jpeg\nType: image\nContent: 181 3\nURL: https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae\nType: link\nContent: ![Image 10: Rohit Patel\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*ECmWr6Z-ToM5JE-h8ywyLQ.jpeg\nType: link\nContent: Rohit Patel\nURL: https://medium.com/@rohit-patel\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: Understanding LLMs from Scratch Using Middle School Math -------------------------------------------------------- ### In this article, we talk about how LLMs work, from scratch \u2014 assuming only that you know how to add and multiply two numbers. The article\u2026\nURL: https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876\nType: link\nContent: 4.3K 47\nURL: https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876\nType: link\nContent: Image 11: Understanding LLMs from Scratch Using Middle School Math\nURL: https://miro.medium.com/v2/resize:fill:80:53/format:webp/1*oETLwMpxy3oH_B9pN-xLcg.png\nType: image\nContent: 4.3K 47\nURL: https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876\nType: link\nContent: Image 12: The Statistical Significance Scam\nURL: https://miro.medium.com/v2/resize:fit:572/format:webp/1*fUigVfmuyNJLUFY6m-lZUw.jpeg\nType: image\nContent: Image 13: The Statistical Significance Scam\nURL: https://miro.medium.com/v2/resize:fit:572/format:webp/1*fUigVfmuyNJLUFY6m-lZUw.jpeg\nType: image\nContent: ![Image 14: Cai Parry-Jones\nURL: https://miro.medium.com/v2/resize:fill:20:20/0*GWV4mbIw3Ex5l9PC\nType: link\nContent: Cai Parry-Jones\nURL: https://medium.com/@caiparryjones96\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: The Statistical Significance Scam --------------------------------- ### A detailed look into the flaws of science\u2019s favorite tool\nURL: https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714\nType: link\nContent: 137\nURL: https://medium.com/towards-data-science/the-statistical-significance-scam-db904be36714\nType: link\nContent: Image 15: Normalized Discounted Cumulative Gain (NDCG)\u200a\u2014\u200aThe Ultimate Ranking Metric\nURL: https://miro.medium.com/v2/resize:fit:572/format:webp/0*U7MA1X95LAKAdchq\nType: image\nContent: Image 16: Normalized Discounted Cumulative Gain (NDCG)\u200a\u2014\u200aThe Ultimate Ranking Metric\nURL: https://miro.medium.com/v2/resize:fit:572/format:webp/0*U7MA1X95LAKAdchq\nType: image\nContent: ![Image 17: Saankhya Mondal\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*TADxXNj_Fq5BqXipXvp1QQ.jpeg\nType: link\nContent: Saankhya Mondal\nURL: https://medium.com/@saankhya\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: Normalized Discounted Cumulative Gain (NDCG) \u2014 The Ultimate Ranking Metric -------------------------------------------------------------------------- ### NDCG \u2014 The Rank-Aware Metric for Evaluating Recommendation Systems\nURL: https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75\nType: link\nContent: 305 6\nURL: https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75\nType: link\nContent: Image 18: Python is No More The King of Data Science\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/1*uiA0nCufUQs-K64ebSUhew.jpeg\nType: image\nContent: ![Image 19: Abdur Rahman\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*dl3HiS_DMv2laLpaKyTBFg.jpeg\nType: link\nContent: Abdur Rahman\nURL: https://medium.com/@abdur-rahman\nType: link\nContent: Stackademic\nURL: https://medium.com/stackademic\nType: link\nContent: Python is No More The King of Data Science ------------------------------------------ ### 5 Reasons Why Python is Losing Its Crown\nURL: https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3\nType: link\nContent: 4.1K 22\nURL: https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3\nType: link\nContent: Image 20: To Index or Not to Index\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/1*r_TJZMdbJdCdhCY_yONmGQ.jpeg\nType: image\nContent: ![Image 21: Christopher Karg\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*IOKAD707flZwbmv1mQYnCw.jpeg\nType: link\nContent: Christopher Karg\nURL: https://medium.com/@christopher_karg\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: To Index or Not to Index ------------------------ ### Leverage SQL indexing to speed up your queries. Learn when to index, when not to, and how indexing works under the hood.\nURL: https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae\nType: link\nContent: 181 3\nURL: https://medium.com/towards-data-science/to-index-or-not-to-index-8be32ad45cae\nType: link\nContent: Image 22: Understanding LLMs from Scratch Using Middle School Math\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/1*oETLwMpxy3oH_B9pN-xLcg.png\nType: image\nContent: ![Image 23: Rohit Patel\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*ECmWr6Z-ToM5JE-h8ywyLQ.jpeg\nType: link\nContent: Rohit Patel\nURL: https://medium.com/@rohit-patel\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: Understanding LLMs from Scratch Using Middle School Math -------------------------------------------------------- ### In this article, we talk about how LLMs work, from scratch \u2014 assuming only that you know how to add and multiply two numbers. The article\u2026\nURL: https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876\nType: link\nContent: 4.3K 47\nURL: https://medium.com/towards-data-science/understanding-llms-from-scratch-using-middle-school-math-e602d27ec876\nType: link\nContent: Image 24: Predicting Every Election Since 1916\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/1*IyBIWk8mf8JVaY6Gy_7g2g.png\nType: image\nContent: ![Image 25: Harys Dalvi\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*APonMNiRc_xq6MFzvUH5Ag.jpeg\nType: link\nContent: Harys Dalvi\nURL: https://medium.com/@crackalamoo\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: Predicting Every Election Since 1916 ------------------------------------ ### How \u201celection pundit predictions\u201d betray a misunderstanding of probability\nURL: https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14\nType: link\nContent: 392 8\nURL: https://medium.com/towards-data-science/predicting-every-election-since-1916-10810bee3c14\nType: link\nContent: Image 26: How to Query a Knowledge Graph with LLMs Using gRAG\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/0*UeZPcm_AcNpatRN4\nType: image\nContent: ![Image 27: Cristian Leo\nURL: https://miro.medium.com/v2/resize:fill:20:20/0*vXUpsKuv7A7DlqP0\nType: link\nContent: Cristian Leo\nURL: https://medium.com/@cristianleo120\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: How to Query a Knowledge Graph with LLMs Using gRAG --------------------------------------------------- ### Google, Microsoft, LinkedIn, and many more tech companies are using Graph RAG. Why? Let\u2019s understand it by building one from scratch.\nURL: https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322\nType: link\nContent: 366 1\nURL: https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322\nType: link\nContent: Image 28: 20 Python Scripts To Automate Your Daily Tasks\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/1*iGrbJxU6oV3q7LeNV28gWg.jpeg\nType: image\nContent: ![Image 29: Abdur Rahman\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*dl3HiS_DMv2laLpaKyTBFg.jpeg\nType: link\nContent: Abdur Rahman\nURL: https://medium.com/@abdur-rahman\nType: link\nContent: Stackademic\nURL: https://medium.com/stackademic\nType: link\nContent: 20 Python Scripts To Automate Your Daily Tasks ---------------------------------------------- ### A must-have collection for every developer\nURL: https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63\nType: link\nContent: 2.3K 21\nURL: https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63\nType: link\nContent: See more recommended stories\nURL: https://medium.com/tag/data-science/recommended\nType: link\nContent: Medium Staff\nURL: https://medium.com/@MediumStaff\nType: link\nContent: Image 30: January Edition: Getting Started in Data Science\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/0*7nbpzkzxb7qe320E\nType: image\nContent: ![Image 31: TDS Editors\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*W8dhinLQHGYmwipTuH0k3A.png\nType: link\nContent: TDS Editors\nURL: https://medium.com/@towardsdatascience\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: January Edition: Getting Started in Data Science ------------------------------------------------ ### Starting off the new year with a warm, gentle welcome to all new and aspiring data scientists\nURL: https://medium.com/towards-data-science/january-edition-getting-started-in-data-science-a493660213d\nType: link\nContent: 304 6\nURL: https://medium.com/towards-data-science/january-edition-getting-started-in-data-science-a493660213d\nType: link\nContent: Image 32: 3 Ways to Break Into Data Science\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/0*N1GjB6zbCaTBQ1JH\nType: image\nContent: ![Image 33: Elad Cohen\nURL: https://miro.medium.com/v2/resize:fill:20:20/2*X2kzprbLHe9PNAhHMr5EQw.png\nType: link\nContent: Elad Cohen\nURL: https://medium.com/@elad-cohen\nType: link\nContent: Riskified Tech\nURL: https://medium.com/riskified-technology\nType: link\nContent: 3 Ways to Break Into Data Science --------------------------------- ### Starting your journey into Data Science? Choose the right path to increase your odds.\nURL: https://medium.com/riskified-technology/3-ways-to-break-into-data-science-6a7a8fd679b3\nType: link\nContent: 768 8\nURL: https://medium.com/riskified-technology/3-ways-to-break-into-data-science-6a7a8fd679b3\nType: link\nContent: Image 34: How To Learn Data Science If You\u2019re Broke\nURL: https://miro.medium.com/v2/resize:fit:365/format:webp/0*zV1Hxq8zOqi7oEQS\nType: image\nContent: ![Image 35: Harrison Jansma\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*Kj7YffsuqBrS6H4QMfuB_Q.jpeg\nType: link\nContent: Harrison Jansma\nURL: https://medium.com/@harrisonjansma\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: How To Learn Data Science If You\u2019re Broke ----------------------------------------- ### Over the last year, I taught myself data science. I learned from hundreds of online resources and studied 6\u20138 hours every day. All while\u2026\nURL: https://medium.com/towards-data-science/how-to-learn-data-science-if-youre-broke-7ecc408b53c7\nType: link\nContent: 23K 101\nURL: https://medium.com/towards-data-science/how-to-learn-data-science-if-youre-broke-7ecc408b53c7\nType: link\nContent: See the full list\nURL: https://medium.com/@MediumStaff/list/getting-started-in-data-science-64eecc07619f\nType: link\nContent: ![Image 36: Ben Putney\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*xn0mK5mf9FRYm_9z__onsA.png\nType: link\nContent: Image 37\nURL: https://miro.medium.com/v2/resize:fill:166:144/0*r4yjMpEmqzHCUvWC.jpg\nType: image\nContent: Image 38\nURL: https://miro.medium.com/v2/resize:fill:166:144/1*bv2KUVNLi2sFNjBTdoBmWw.png\nType: image\nContent: Image 39\nURL: https://miro.medium.com/v2/resize:fill:166:144/0*zsngbTOmFCy6sUCx.jpeg\nType: image\nContent: ![Image 40: Destin Gong\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*_qYYfgLTcvZF3zhHO0yVdA@2x.jpeg\nType: link\nContent: Image 41: Principal Component Analysis for ML\nURL: https://miro.medium.com/v2/resize:fill:166:144/1*swd_PY6vTCyPnsgBYoFZfA.png\nType: image\nContent: Image 42: Time Series Analysis\nURL: https://miro.medium.com/v2/resize:fill:166:144/1*8sSAHftNwd_RNJ3k4VA0pA.png\nType: image\nContent: Image 43: deep learning cheatsheet for beginner\nURL: https://miro.medium.com/v2/resize:fill:166:144/1*uNyD4yNMH-DnOel1wzxOOA.png\nType: image\nContent: ![Image 44: J. Kai\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*9HgFGjnCZfQu17sKBtkoqg.png\nType: link\nContent: Image 45\nURL: https://miro.medium.com/v2/da:true/resize:fill:166:144/0*gzCeWxDtGmD23QR5\nType: image\nContent: Image 46\nURL: https://miro.medium.com/v2/resize:fill:166:144/1*di4WDrnS1F6_p9GWnxvPmg.png\nType: image\nContent: Image 47\nURL: https://miro.medium.com/v2/resize:fill:166:144/1*PzJLbFrFtNkqPsxielO8zA.jpeg\nType: image\nContent: ![Image 48: Nicholas Michael Janulewicz\nURL: https://miro.medium.com/v2/resize:fill:20:20/0*lF7TduOVYhWzdpOT.jpg\nType: link\nContent: Image 49\nURL: https://miro.medium.com/v2/resize:fill:166:144/1*I2o9__q4g1dzbcH9XRqcRg.png\nType: image\nContent: Image 50\nURL: https://miro.medium.com/v2/resize:fill:166:144/0*F6q2BN7oddumBDGY.png\nType: image\nContent: Image 51\nURL: https://miro.medium.com/v2/da:true/resize:fill:166:144/0*dT68KKwa4mw4ShQJ\nType: image\nContent: ![Image 52: Abdur Rahman\nURL: https://miro.medium.com/v2/resize:fill:64:64/1*dl3HiS_DMv2laLpaKyTBFg.jpeg\nType: link\nContent: Abdur Rahman\nURL: https://medium.com/@abdur-rahman\nType: link\nContent: ![Image 53: Towards Data Science\nURL: https://miro.medium.com/v2/resize:fill:64:64/1*CJe3891yB1A1mzMdqemkdg.jpeg\nType: link\nContent: Towards Data Science\nURL: https://medium.com/towards-data-science\nType: link\nContent: ![Image 54: Austin Starks\nURL: https://miro.medium.com/v2/resize:fill:64:64/1*dfww62lW8x8sVZNbLx5aCA.jpeg\nType: link\nContent: Austin Starks\nURL: https://medium.com/@austin-starks\nType: link\nContent: ![Image 55: Level Up Coding\nURL: https://miro.medium.com/v2/resize:fill:64:64/1*5D9oYBd58pyjMkV_5-zXXQ.jpeg\nType: link\nContent: Level Up Coding\nURL: https://medium.com/gitconnected\nType: link\nContent: ![Image 56: Ignacio de Gregorio\nURL: https://miro.medium.com/v2/resize:fill:64:64/1*p6kCCpNZARkVEYv4OCH7GQ@2x.jpeg\nType: link\nContent: Ignacio de Gregorio\nURL: https://medium.com/@ignacio.de.gregorio.noblejas\nType: link\nContent: See more\nURL: https://medium.com/tag/data-science/who-to-follow\nType: link\nContent: ![Image 57: Vijay Satish Londhe\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*3MmcSQPmhYcwFUZlQiATTw.jpeg\nType: link\nContent: Vijay Satish Londhe\nURL: https://medium.com/@viju-londhe\nType: link\nContent: Python for Machine Learning: A Practical Introduction ----------------------------------------------------- ### Discover the Essentials of Python for Machine Learning in Simple Steps\nURL: https://medium.com/@viju-londhe/python-for-machine-learning-a-practical-introduction-89446f6f199d\nType: link\nContent: Image 58: Python for Machine Learning: A Practical Introduction\nURL: https://miro.medium.com/v2/da:true/resize:fill:80:53/0*u0fi5KtxvUK7duHE\nType: image\nContent: Image 59: Python for Machine Learning: A Practical Introduction\nURL: https://miro.medium.com/v2/da:true/resize:fill:160:107/0*u0fi5KtxvUK7duHE\nType: image\nContent: ![Image 60: Mohit Mahur\nURL: https://miro.medium.com/v2/resize:fill:20:20/0*rrxc5fWZ3QzcKchC\nType: link\nContent: Mohit Mahur\nURL: https://medium.com/@22f1000344\nType: link\nContent: Title: Understanding K-Nearest Neighbors (K-NN) in Classification: Choosing the Right Value of k ------------------------------------------------------------------------------------------------ ### Choosing K Value in K-NN Classification\nURL: https://medium.com/@22f1000344/title-understanding-k-nearest-neighbors-k-nn-in-classification-choosing-the-right-value-of-k-e12b54a33f77\nType: link\nContent: ![Image 61: Asim Abbas\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*UmoO43NtFNdCChcTnxbr0w.jpeg\nType: link\nContent: Asim Abbas\nURL: https://medium.com/@smartbrand480\nType: link\nContent: Terrorism is an act, which aims to create fear among ordinary people by illegal means. -------------------------------------------------------------------------------------- ### Stop Terrorism\nURL: https://medium.com/@smartbrand480/terrorism-is-an-act-which-aims-to-create-fear-among-ordinary-people-by-illegal-means-d70807ea50d9\nType: link\nContent: Image 62: Terrorism is an act, which aims to create fear among ordinary people by illegal means.\nURL: https://miro.medium.com/v2/resize:fill:80:53/1*3XeADo354FwvYBzMt7rlFg.png\nType: image\nContent: Image 63: Terrorism is an act, which aims to create fear among ordinary people by illegal means.\nURL: https://miro.medium.com/v2/resize:fill:160:107/1*3XeADo354FwvYBzMt7rlFg.png\nType: image\nContent: ![Image 64: Jesus Davila\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*9cGCt2CLttJxybqg7QWXMA@2x.jpeg\nType: link\nContent: Jesus Davila\nURL: https://medium.com/@gtbkxbvy\nType: link\nContent: A Mini Weather Forecasting Project: Quick Data Analysis for Instant Dopamine Boost ----------------------------------------------------------------------------------\nURL: https://medium.com/@gtbkxbvy/a-mini-weather-forecasting-project-quick-data-analysis-for-instant-dopamine-boost-2fad962e14fd\nType: link\nContent: Image 65: A Mini Weather Forecasting Project: Quick Data Analysis for Instant Dopamine Boost\nURL: https://miro.medium.com/v2/resize:fill:80:53/1*2nW0F9UKi_H61ZMe4P7I_g@2x.jpeg\nType: image\nContent: Image 66: A Mini Weather Forecasting Project: Quick Data Analysis for Instant Dopamine Boost\nURL: https://miro.medium.com/v2/resize:fill:160:107/1*2nW0F9UKi_H61ZMe4P7I_g@2x.jpeg\nType: image\nContent: ![Image 67: Sauravpk\nURL: https://miro.medium.com/v2/resize:fill:20:20/1*VNwDtM_wUGu_-Gv-L4fqYw.jpeg\nType: link\nContent: Sauravpk\nURL: https://medium.com/@sauravpk97\nType: link\nContent: Data Science- its not rocket science! ------------------------------------- ### I\u2019ve been meaning to note down my thoughts about the world of data science for a while now. A thought that appeared as a whim from my time\u2026\nURL: https://medium.com/@sauravpk97/data-science-its-not-rocket-science-2e2c79957b69\nType: link\nContent: 50\nURL: https://medium.com/@sauravpk97/data-science-its-not-rocket-science-2e2c79957b69\nType: link\nContent: 50\nURL: https://medium.com/@sauravpk97/data-science-its-not-rocket-science-2e2c79957b69\nType: link\nContent: See more stories\nURL: https://medium.com/tag/data-science/archive\nType: link\nContent: Help\nURL: https://help.medium.com/hc/en-us\nType: link\nContent: Status\nURL: https://medium.statuspage.io/\nType: link\nContent: About\nURL: https://medium.com/about\nType: link\nContent: Careers\nURL: https://medium.com/jobs-at-medium/work-at-medium-959d1a85284e\nType: link\nContent: Press\nURL: https://medium.com/tag/pressinquiries@medium.com\nType: link\nContent: Blog\nURL: https://blog.medium.com/\nType: link\nContent: Privacy\nURL: https://policy.medium.com/medium-privacy-policy-f03bf92035c9\nType: link\nContent: Terms\nURL: https://policy.medium.com/medium-terms-of-service-9db0094a1e0f\nType: link\nContent: Text to speech\nURL: https://speechify.com/medium\nType: link\nContent: Teams\nURL: https://medium.com/business\nType: link"
+}

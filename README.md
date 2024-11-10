@@ -1,134 +1,186 @@
 # Finance Article Tools
 
-This project consists of two main components:
+A comprehensive tool for scraping, organizing, and formatting financial articles, with special handling for Medium and other content platforms.
 
-1. **Finance Article Scraper & Formatter**: Scrapes financial articles and formats them into structured content
-2. **Link Pipeline**: Crawls websites and organizes links using GPT
+## Project Status
 
-## Part 1: Finance Article Scraper & Formatter
+Current Implementation Status:
+1. ✅ Enhanced content analysis with GPT-4
+2. ✅ Full page content processing (not just links)
+3. ✅ Support for Medium and other platforms
+4. ✅ Duplicate content detection
+5. ✅ Site-wide pattern removal
+6. ✅ Command-line configuration
 
-A Python tool that scrapes financial articles from Mergers & Inquisitions, combines them into a single document, and uses GPT to format them into clean, structured content.
+Last Working Point:
+- Upgraded to OpenAI API v1.0
+- Improved content analysis using full page context
+- Enhanced bundle detection with GPT-4
+- Added better error handling and validation
+- Fixed silent fallbacks to predefined bundles
 
-### Overview
+Next Steps:
+1. Add more website-specific handlers
+2. Implement rate limiting for API calls
+3. Add support for authentication if needed
+4. Improve bundle categorization logic
 
-The scraper works in two phases:
-1. Scrapes articles and creates a combined markdown file
-2. Uses GPT to format the combined content into a clean, structured document
+## Quick Start
 
-### Usage
-
-#### 1. Scraping Articles
-```bash
-python scrape_all.py
-```
-This script:
-- Creates a `mdforfinance` directory
-- Scrapes articles from predefined URL bundles
-- Saves individual markdown files
-- Creates a combined markdown file
-
-#### 2. Formatting Content
-```bash
-python format_combined.py
-```
-This script:
-- Takes the combined markdown file
-- Processes it through GPT
-- Saves a formatted version
-
-### Output Files
-
-The scraper generates:
-- `mdforfinance/*.md` - Individual article files
-- `mdforfinance/finance_articles_combined.md` - Combined raw content
-- `mdforfinance/finance_articles_formatted.md` - GPT-formatted content
-
-## Part 2: Link Pipeline
-
-A tool that crawls websites to collect article links and organizes them into topic bundles using GPT.
-
-### Overview
-
-The pipeline works in two phases:
-1. Crawls website to collect article links
-2. Uses GPT to organize links into topic bundles
-
-### Usage
-
-#### Running the Full Pipeline
-```bash
-python pipeline/run_pipeline.py "https://example.com" --output-dir ./output
-```
-This script:
-- Crawls the website to collect article links
-- Organizes links into topic bundles using GPT
-- Saves results to specified output directory
-
-#### Individual Components
-
-1. Link Crawler
-```python
-from pipeline.link_crawler import LinkCrawler
-
-crawler = LinkCrawler("https://example.com")
-crawler.crawl(max_depth=2)
-```
-
-2. Link Organizer
-```python
-from pipeline.link_organizer import LinkOrganizer
-
-organizer = LinkOrganizer(api_key)
-bundles = organizer.organize_links("crawled_links.json")
-```
-
-### Pipeline Output
-
-The pipeline generates:
-- `output/crawled_links.json` - Raw crawled links with metadata
-- `output/organized_bundles.json` - GPT-organized topic bundles
-
-## Installation (Common)
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd finance-tools
-```
-
-2. Install required packages:
+1. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file in the project root with your OpenAI API key:
+2. Set up your environment:
 ```bash
-OPENAI_API_KEY=your_api_key_here
+# Create .env file
+echo "OPENAI_API_KEY=your_api_key_here" > .env
 ```
 
-## Requirements
-
-- Python 3.7+
-- OpenAI API key
-- Required packages:
-  - requests
-  - beautifulsoup4
-  - openai
-  - python-dotenv
-  - tiktoken
-
-## Project Structure
+3. Run the scraper:
+```bash
+python scrape_all.py --max-urls 20 --delay 5 --timeout 45
+# Choose option 2 when prompted
+# Enter URL: https://medium.com/tag/data-science/recommended
 ```
-finance_tools/
-├── pipeline/                    # Link Pipeline
-│   ├── link_crawler.py         # Website crawling logic
-│   ├── link_organizer.py       # GPT-based link organization
-│   └── run_pipeline.py         # Pipeline script
-├── mdforfinance/               # Scraper output directory
-├── article_formatter.py        # Content formatting logic
-├── finance_crawler.py          # Article scraping logic
-├── finance_scraper.py          # URL management
-├── scrape_all.py              # Main scraping script
-├── format_combined.py          # Formatting script
-└── requirements.txt            # Project dependencies
+
+## Features
+
+- **Advanced Content Analysis**: 
+  - Uses GPT-4 for comprehensive page analysis
+  - Processes entire page content, not just links
+  - Creates meaningful content bundles based on full context
+
+- **Comprehensive Data Collection**:
+  - Captures all relevant article content
+  - Filters out navigation and system URLs
+  - Handles pagination and dynamic content
+
+- **Smart Processing**:
+  - Detects and removes duplicate content
+  - Removes common site-wide patterns
+  - Validates bundle content before processing
+
+- **Content Processing**:
+  - The system uses two Jina AI approaches:
+    1. **In-site Search**: Uses `s.jina.ai` to find relevant articles within a domain
+    2. **Adaptive Crawler**: Uses `r.jina.ai` with adaptive crawler to recursively find content
+
+  Benefits:
+  - More focused article discovery
+  - Better handling of large sites
+  - Automatic relevance filtering
+  - Reduced processing overhead
+
+  GPT-4 analyzes this clean content to:
+  1. Extract relevant article URLs
+  2. Group them based on content relationships
+  3. Provide context for grouping decisions
+  4. Generate meaningful bundle descriptions
+
+## Output Files
+
+The system generates several JSON files for analysis:
+1. `raw_content.md`: Full page content from Jina reader
+2. `gpt_content_analysis.json`: GPT's detailed content analysis
+3. `detected_bundles.json`: Final organized bundles
+4. Individual article files in bundle directories
+
+## Command-Line Options
+
+```bash
+python scrape_all.py [options]
+
+Options:
+  --max-urls N       Maximum articles to extract per page (default: 100)
+  --delay N         Delay between requests in seconds (default: 15)
+  --timeout N       Request timeout in seconds (default: 45)
+  --domain-limit N  Max URLs per domain (default: 10)
+  --min-content N   Minimum content length (default: 500)
 ```
+
+## Directory Structure
+
+```
+output/
+├── [timestamp]/
+│   ├── raw_data/
+│   │   ├── raw_content.md
+│   │   └── extracted_links.json
+│   ├── gpt_data/
+│   │   ├── gpt_content_analysis.json
+│   │   └── gpt_output.json
+│   ├── bundles/
+│   │   └── detected_bundles.json
+│   └── articles/
+│       └── [bundle_name]/
+│           ├── individual_articles.md
+│           └── bundle_combined.md
+```
+
+## Workflow
+
+1. **Content Fetching**:
+   - Uses Jina AI reader to fetch full page content
+   - Saves raw content for analysis
+   - Handles timeouts and errors
+
+2. **Content Analysis**:
+   - Sends full page content to GPT-4
+   - Identifies article URLs and topics
+   - Creates meaningful content bundles
+
+3. **Bundle Processing**:
+   - Validates bundle content
+   - Filters out non-article URLs
+   - Prevents empty bundle processing
+
+4. **Output Generation**:
+   - Creates organized directory structure
+   - Saves all intermediate data
+   - Generates combined and formatted output
+
+## Error Handling
+
+The system now handles:
+- Network timeouts
+- Access restrictions
+- Invalid GPT responses
+- Empty bundles
+- Invalid URLs
+- Silent fallbacks
+
+## Development Notes
+
+Key Classes:
+- `BundleDetector`: Full page analysis and bundle creation
+- `FinanceCrawler`: Content fetching and processing
+- `ArticleFormatter`: Content cleanup and formatting
+
+API Dependencies:
+- OpenAI GPT-4 for content analysis
+- Jina AI reader for content extraction
+
+## Testing
+
+Test the scraper with:
+```bash
+# Basic test (5 URLs)
+python scrape_all.py --max-urls 5 --delay 5 --timeout 30
+
+# Medium test
+python scrape_all.py --max-urls 10 --delay 10 --timeout 45
+# Enter: https://medium.com/tag/data-science/recommended
+```
+
+## Contributing
+
+1. Check the Project Status section
+2. Review known issues
+3. Test with different websites
+4. Submit PRs with website-specific improvements
+
+## License
+
+[Your License Here]
