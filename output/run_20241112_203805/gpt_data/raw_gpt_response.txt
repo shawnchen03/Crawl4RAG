@@ -1,0 +1,54 @@
+```json
+{
+    "bundles": {
+        "jobs and recruiting": {
+            "urls": [
+                "https://jobs.opendatascience.com/",
+                "https://opendatascience.com/category/careers/"
+            ],
+            "topic": "Job opportunities and career advice in data science and AI.",
+            "metadata": {
+                "main_theme": "Career development in data science and AI.",
+                "key_concepts": ["job listings", "career advice"],
+                "target_audience": "Job seekers and professionals in data science.",
+                "difficulty_level": "beginner/intermediate"
+            },
+            "articles": [
+                {
+                    "url": "https://jobs.opendatascience.com/",
+                    "relevance": "This link provides job listings specifically for data science roles."
+                },
+                {
+                    "url": "https://opendatascience.com/category/careers/",
+                    "relevance": "This link offers career advice and resources for professionals in the field."
+                }
+            ]
+        },
+        "LLM": {
+            "urls": [
+                "https://opendatascience.com/category/modeling/nlp-text-analytics/",
+                "https://opendatascience.com/category/modeling/deep-learning/"
+            ],
+            "topic": "Content related to large language models and their applications.",
+            "metadata": {
+                "main_theme": "Exploration of large language models and their impact.",
+                "key_concepts": ["NLP", "deep learning", "language models"],
+                "target_audience": "Researchers and practitioners in AI and NLP.",
+                "difficulty_level": "intermediate/advanced"
+            },
+            "articles": [
+                {
+                    "url": "https://opendatascience.com/category/modeling/nlp-text-analytics/",
+                    "relevance": "This link covers topics related to natural language processing and large language models."
+                },
+                {
+                    "url": "https://opendatascience.com/category/modeling/deep-learning/",
+                    "relevance": "This link discusses deep learning techniques relevant to language models."
+                }
+            ]
+        }
+    },
+    "total_urls": "4",
+    "selection_logic": "The URLs were selected based on their relevance to the specified topics of jobs and recruiting, and LLM. Each bundle contains URLs that directly relate to the respective themes, ensuring that the total number of URLs does not exceed the limit of 3 per bundle."
+}
+```

@@ -1,0 +1,33 @@
+```json
+{
+    "bundles": {
+        "AI": {
+            "urls": [
+                "https://medium.com/gitconnected/what-is-the-best-therapy-for-a-hallucinating-ai-patient-acf0cb9b3e00?source=tag_recommended_stories_page------data_science---1-107--------------------2f79fda4_ef84_47e0_9cf2_183f409e0b83-------",
+                "https://medium.com/gitconnected/llms-and-the-student-dilemma-learning-to-solve-or-learning-to-remember-249152b72d82?source=tag_recommended_stories_page------data_science---19-107--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------",
+                "https://medium.com/ai-advances/use-ai-to-scrape-almost-all-websites-easily-in-2025-f868adc41e0f?source=tag_recommended_stories_page------data_science---14-85--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------"
+            ],
+            "topic": "Artificial Intelligence and its applications",
+            "reason": "These articles discuss various aspects of AI, including hallucinations in AI models, learning mechanisms in LLMs, and practical applications of AI in web scraping."
+        },
+        "Career": {
+            "urls": [
+                "https://medium.com/stackademic/20-python-scripts-that-will-give-you-superpowers-4c6f4b15fe63?source=tag_recommended_stories_page------data_science---8-85--------------------2f79fda4_ef84_47e0_9cf2_183f409e0b83-------",
+                "https://medium.com/towards-data-science/reporting-in-excel-could-be-costing-your-business-more-than-you-think-heres-how-to-fix-it-aa40c0020131?source=tag_recommended_stories_page------data_science---18-84--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------"
+            ],
+            "topic": "Career development and productivity",
+            "reason": "These articles focus on improving productivity and skills relevant to career advancement, particularly in data science and programming."
+        },
+        "theories": {
+            "urls": [
+                "https://medium.com/towards-data-science/machine-learning-in-fraud-detection-a-primer-8005b8c88cde?source=tag_recommended_stories_page------data_science---12-84--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------",
+                "https://medium.com/towards-data-science/random-forest-explained-a-visual-guide-with-code-examples-9f736a6e1b3c?source=tag_recommended_stories_page------data_science---17-85--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------"
+            ],
+            "topic": "Theoretical foundations of machine learning",
+            "reason": "These articles delve into machine learning concepts and methodologies, providing theoretical insights into their applications."
+        }
+    },
+    "total_urls": "8",
+    "selection_logic": "The selection process involved identifying articles that fit into the specified categories of AI, Career, and theories. Articles were chosen based on their relevance to the topics, ensuring a maximum of 10 URLs across all bundles."
+}
+```

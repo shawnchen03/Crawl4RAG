@@ -1,0 +1,37 @@
+```json
+{
+    "bundles": {
+        "data science techniques": {
+            "urls": [
+                "https://medium.com/stackademic/is-python-still-the-king-of-data-science-476f1e3191b3?source=tag_recommended_stories_page------data_science---2-85--------------------2f79fda4_ef84_47e0_9cf2_183f409e0b83-------",
+                "https://medium.com/towards-data-science/normalized-discounted-cumulative-gain-ndcg-the-ultimate-ranking-metric-437b03529f75?source=tag_recommended_stories_page------data_science---4-107--------------------2f79fda4_ef84_47e0_9cf2_183f409e0b83-------",
+                "https://medium.com/towards-data-science/random-forest-explained-a-visual-guide-with-code-examples-9f736a6e1b3c?source=tag_recommended_stories_page------data_science---17-85--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------"
+            ],
+            "topic": "Data Science Techniques",
+            "reason": "These articles discuss specific techniques and tools used in data science, such as Python's role, ranking metrics, and machine learning models."
+        },
+        "AI and LLM": {
+            "urls": [
+                "https://medium.com/gitconnected/what-is-the-best-therapy-for-a-hallucinating-ai-patient-acf0cb9b3e00?source=tag_recommended_stories_page------data_science---1-107--------------------2f79fda4_ef84_47e0_9cf2_183f409e0b83-------",
+                "https://medium.com/towards-data-science/economics-of-hosting-open-source-llms-17b4ec4e7691?source=tag_recommended_stories_page------data_science---3-84--------------------2f79fda4_ef84_47e0_9cf2_183f409e0b83-------",
+                "https://medium.com/towards-data-science/how-to-query-a-knowledge-graph-with-llms-using-grag-38bfac47a322?source=tag_recommended_stories_page------data_science---10-107--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------",
+                "https://medium.com/gitconnected/llms-and-the-student-dilemma-learning-to-solve-or-learning-to-remember-249152b72d82?source=tag_recommended_stories_page------data_science---19-107--------------------1b8fe457_aae3_4658_8bd2_66e0f48ca940-------"
+            ],
+            "topic": "AI and Large Language Models",
+            "reason": "These articles focus on AI and LLMs, discussing their applications, challenges, and economic aspects."
+        },
+        "jobs": {
+            "urls": [],
+            "topic": "Job Market and Opportunities",
+            "reason": "No articles specifically related to jobs or job market were found in the provided links."
+        },
+        "interview": {
+            "urls": [],
+            "topic": "Interview Preparation and Techniques",
+            "reason": "No articles specifically related to interview preparation or techniques were found in the provided links."
+        }
+    },
+    "total_urls": "7",
+    "selection_logic": "The selection was based on the relevance of the articles to the specified topics. Articles focusing on data science techniques, AI, and LLM were grouped accordingly. No articles related to jobs or interviews were found, so those bundles remain empty. Duplicate or irrelevant links were excluded to meet the requirement of not exceeding 12 URLs."
+}
+```

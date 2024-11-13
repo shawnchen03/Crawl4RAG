@@ -6,61 +6,40 @@ import json
 import time
 import os
 import re
+from jina_reader import JinaReader
 
 class BundleDetector:
     """Simple bundle detector using Jina reader and GPT"""
     
-    def __init__(self, api_key: str, base_url: str, max_urls: int = 100, output_dir: str = None):
+    def __init__(self, api_key: str, base_url: str, max_urls: int = 100, 
+                 output_dir: str = None, bundle_preferences: dict = None,
+                 jina_reader: JinaReader = None, api_logger = None):
         self.api_key = api_key
         self.base_url = base_url
         self.max_urls = max_urls
+        self.bundle_preferences = bundle_preferences
+        self.jina_reader = jina_reader or JinaReader()
         
         # Setup directories
-        domain = urlparse(base_url).netloc.replace('.', '_')
-        timestamp = time.strftime("%Y%m%d_%H%M%S")
-        self.run_id = f"{domain}_{timestamp}"
+        self.output_dir = output_dir
+        self.raw_dir = os.path.join(output_dir, "raw_data")
+        self.gpt_dir = os.path.join(output_dir, "gpt_data")
         
-        self.output_dir = output_dir or "output"
-        self.run_dir = os.path.join(self.output_dir, self.run_id)
-        self.raw_dir = os.path.join(self.run_dir, "raw_data")
-        self.gpt_dir = os.path.join(self.run_dir, "gpt_data")
-        self.bundles_dir = os.path.join(self.run_dir, "bundles")
-        self.articles_dir = os.path.join(self.run_dir, "articles")
-        
-        for dir_path in [self.raw_dir, self.gpt_dir, self.bundles_dir, self.articles_dir]:
+        for dir_path in [self.raw_dir, self.gpt_dir]:
             os.makedirs(dir_path, exist_ok=True)
+        
+        self.api_logger = api_logger
 
     def _fetch_with_jina(self, url: str) -> str:
-        """Fetch content using Jina's reader"""
-        encoded_url = quote(url, safe='')
-        reader_url = f"https://r.jina.ai/{encoded_url}"
-        
-        headers = {
-            "Accept": "text/markdown",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "x-timeout": "45"
-        }
-        
-        try:
-            print(f"Fetching with Jina: {url}")
-            response = requests.get(reader_url, headers=headers, timeout=45)
-            
-            if response.status_code != 200:
-                print(f"Error fetching {url}: {response.status_code}")
-                return None
-                
-            return response.text
-            
-        except Exception as e:
-            print(f"Error fetching {url}: {str(e)}")
-            return None
+        """Use shared JinaReader instance"""
+        return self.jina_reader.fetch_content(url)
 
     def detect_bundles(self) -> Dict[str, List[str]]:
         """Main method to detect and create URL bundles"""
         print("Starting bundle detection...")
         
-        # 1. Fetch content with Jina
-        content = self._fetch_with_jina(self.base_url)
+        # Use shared reader
+        content = self.jina_reader.fetch_content(self.base_url)
         if not content:
             print("Failed to fetch content")
             return None
@@ -91,15 +70,43 @@ class BundleDetector:
         # 4. Let GPT analyze everything
         try:
             client = openai.OpenAI()
+            
+            # Construct prompt based on preferences
+            if self.bundle_preferences:
+                if self.bundle_preferences.get('auto_detect'):
+                    bundle_instruction = f"""Analyze these links and:
+                    1. Create 2-4 thematic bundles based on content similarity
+                    2. Each bundle should contain 1-6 URLs
+                    3. Total URLs across ALL bundles must not exceed {self.max_urls}
+                    4. Name bundles based on their common themes
+                    5. Provide detailed metadata for each bundle
+                    """
+                else:
+                    bundle_instruction = f"""Analyze these links and organize them into exactly {self.bundle_preferences['num_bundles']} bundles:
+                    {', '.join(self.bundle_preferences['bundle_names'])}
+
+                    Rules:
+                    1. Use ONLY the specified bundle names
+                    2. Each bundle should contain 1-6 URLs
+                    3. Total URLs across ALL bundles must not exceed {self.max_urls}
+                    4. Distribute URLs based on relevance to each topic
+                    5. Skip any URLs that don't fit the specified topics
+                    """
+            else:
+                bundle_instruction = f"""Analyze these links and:
+                1. Create 1-6 thematic bundles
+                2. Total URLs must not exceed {self.max_urls}
+                3. Group by content similarity
+                """
+
             response = client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-mini",
                 messages=[
                     {
                         "role": "system", 
-                        "content": f"""Analyze these links from a Medium tag page and:
-                        1. Identify up to {self.max_urls} most relevant technical articles
-                        2. Create 2-4 thematic bundles based on content relationships
-                        3. Explain your selection and grouping logic
+                        "content": f"""You are a content organization assistant.
+                        
+                        {bundle_instruction}
                         
                         Return as JSON:
                         {{
@@ -107,22 +114,40 @@ class BundleDetector:
                                 "bundle_name": {{
                                     "urls": ["url1", "url2"],
                                     "topic": "Topic description",
-                                    "reason": "Why these articles belong together",
-                                    "articles": ["Article 1 title", "Article 2 title"]
+                                    "metadata": {{
+                                        "main_theme": "Core theme of this bundle",
+                                        "key_concepts": ["concept1", "concept2"],
+                                        "target_audience": "Who this content is for",
+                                        "difficulty_level": "beginner/intermediate/advanced"
+                                    }},
+                                    "articles": [
+                                        {{
+                                            "url": "article_url",
+                                            "relevance": "One sentence explaining how this article relates to the bundle topic"
+                                        }}
+                                    ]
                                 }}
                             }},
-                            "selection_logic": "Explain how you chose these articles",
-                            "grouping_logic": "Explain how you created the bundles"
+                            "total_urls": "Total number of URLs",
+                            "selection_logic": "Explain your selection process"
                         }}"""
                     },
                     {
                         "role": "user",
-                        "content": f"Here are all the links from the page:\n\n{json.dumps(all_links, indent=2)}"
+                        "content": f"Here are the links to organize:\n\n{json.dumps(all_links, indent=2)}"
                     }
                 ],
                 temperature=0.3,
                 max_tokens=2000
             )
+            
+            if self.api_logger:
+                self.api_logger.log_gpt_call(
+                    response.usage.prompt_tokens,
+                    response.usage.completion_tokens,
+                    True,
+                    task="bundle_detection"
+                )
             
             # 1. First save raw response
             raw_response = response.choices[0].message.content
@@ -165,27 +190,35 @@ class BundleDetector:
                     'gpt_analysis': rich_analysis
                 }, f, indent=2)
             
+            # Add URL count validation
+            total_urls = sum(len(data['urls']) for data in rich_analysis['bundles'].values())
+            if total_urls > self.max_urls:
+                print(f"Warning: GPT returned {total_urls} URLs, exceeding limit of {self.max_urls}")
+                # Trim URLs to meet limit
+                remaining = self.max_urls
+                trimmed_bundles = {}
+                for name, data in rich_analysis['bundles'].items():
+                    urls_to_take = min(remaining, len(data['urls']))
+                    if urls_to_take > 0:
+                        trimmed_data = data.copy()
+                        trimmed_data['urls'] = data['urls'][:urls_to_take]
+                        trimmed_bundles[name] = trimmed_data
+                        remaining -= urls_to_take
+                    if remaining <= 0:
+                        break
+                rich_analysis['bundles'] = trimmed_bundles
+            
             # Convert to simplified format for scrape_all.py
             simple_bundles = {}
             for name, data in rich_analysis['bundles'].items():
-                # Convert bundle name to snake_case
                 bundle_name = name.lower().replace(' ', '_')
-                # Only take the URLs
                 simple_bundles[bundle_name] = data['urls']
             
-            # Save simplified format
-            bundles_file = os.path.join(self.bundles_dir, "detected_bundles.json")
-            with open(bundles_file, 'w', encoding='utf-8') as f:
-                json.dump(simple_bundles, f, indent=2)
+            # Verify final count
+            final_total = sum(len(urls) for urls in simple_bundles.values())
+            print(f"\nTotal URLs to process: {final_total} (max allowed: {self.max_urls})")
             
-            # Print what we're returning
-            print("\nConverted bundles for scraping:")
-            for name, urls in simple_bundles.items():
-                print(f"\n{name}:")
-                for url in urls:
-                    print(f"- {url}")
-            
-            return simple_bundles  # This is what scrape_all.py will use
+            return simple_bundles
             
         except Exception as e:
             print(f"Error in GPT processing: {str(e)}")

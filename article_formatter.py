@@ -59,16 +59,32 @@ class ArticleFormatter:
             
             for i, chunk in enumerate(chunks):
                 response = openai.ChatCompletion.create(
-                    model="gpt-4",
+                    model="gpt-4o-mini",
                     messages=[
-                        {"role": "system", "content": """You are a financial content editor focused on creating clean, structured educational content.
+                        {"role": "system", "content": """You are a content editor focused on creating clean, structured educational content.
+                        
                         Your tasks:
-                        1. Remove all URLs and links while preserving the link text
-                        2. Organize content into clear sections with proper headers
-                        3. Format with clean markdown
-                        4. Preserve image analysis sections but clean up their format
-                        5. Keep GPT analysis sections if present but improve their readability
-                        6. Keep the content factual and educational"""},
+                        1. Preserve and enhance all metadata sections
+                        2. Maintain bundle and article relationships
+                        3. Keep relevance descriptions and topic connections
+                        4. Format content with clear headers and structure
+                        5. Clean up formatting while preserving information
+                        6. Ensure all bundle metadata is prominently displayed
+                        7. Keep content factual and educational
+                        
+                        Expected structure:
+                        # Bundle: [name]
+                        ## Bundle Metadata
+                        - Topic: [topic]
+                        - Main Theme: [theme]
+                        - Key Concepts: [concepts]
+                        - Target Audience: [audience]
+                        - Difficulty Level: [level]
+                        
+                        ## Article: [url]
+                        Relevance: [relevance description]
+                        [content]
+                        """},
                         {"role": "user", "content": f"Format this content (chunk {i+1}/{len(chunks)}):\n\n{chunk}"}
                     ],
                     temperature=0.3,
@@ -110,23 +126,19 @@ class ArticleFormatter:
         }
 
     def format_articles(self, input_file: str, output_file: str):
-        """Format articles with improved section handling and error recovery"""
+        """Format articles with improved section handling"""
         try:
-            # Reset counters
             self.total_tokens_used = 0
             self.total_chunks_processed = 0
             
-            # Read and clean input content
+            # Read master combined file
             with open(input_file, 'r', encoding='utf-8') as f:
                 content = f.read()
-            
-            # Initial cleaning
-            content = self._clean_markdown_links(content)
             
             # Format content
             formatted_content = self._format_with_gpt(content)
             
-            # Save formatted content
+            # Save formatted version
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(formatted_content)
             
@@ -135,16 +147,11 @@ class ArticleFormatter:
             print("\nFormatting Statistics:")
             print(f"Total tokens used: {stats['total_tokens']:,}")
             print(f"Chunks processed: {stats['chunks_processed']}")
-            print(f"Estimated input tokens: {stats['estimated_input_tokens']:,}")
-            print(f"Estimated output tokens: {stats['estimated_output_tokens']:,}")
             print(f"Estimated cost: ${stats['estimated_cost_usd']:.2f}")
-                
-            print(f"\nSuccessfully formatted and saved to {output_file}")
             
         except Exception as e:
             print(f"Error formatting articles: {str(e)}")
-            # Create backup of original content
+            # Create backup
             backup_file = f"{output_file}.backup"
             with open(backup_file, 'w', encoding='utf-8') as f:
                 f.write(content)
-            print(f"Original content saved to {backup_file}")

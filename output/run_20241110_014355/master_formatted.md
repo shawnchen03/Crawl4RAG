@@ -5309,67 +5309,7 @@ Towards Data Science
 
 Normalized Discounted Cumulative Gain (NDCG) — The Ultimate Ranking Metric -------------------------------------------------------------------------- ### NDCG — The Rank-Aware Metric for Evaluating Recommendation Systems
 
-305 6
-
-[](
-
-[](
-
-Dr. Leon Eversberg
-
-485 2
-
-[](
-
-
-
-[](
-
-Francesco Franco
-
-T3CH
-
-An Introduction to Transformers in Machine Learning --------------------------------------------------- ### When you read about Machine Learning in Natural Language Processing these days, all you hear is one thing — Transformers. Models based on…
-
-278 1
-
-[](
-
-[](
-
-Abdur Rahman
-
-Stackademic
-
-4.1K 22
-
-[](
-
-Liu Zuo Lin
-
-Level Up Coding
-
-1.7K 17
-
-[](
-
-[](
-
-Lucas Samba
-
-461 12
-
-[](
-
-[](
-
-Shenggang Li
-
-Towards AI
-
-157 2
-
-[](
+3·
 
 ## Visual Content Analysis
 
@@ -5539,7 +5479,6 @@ Lucas Samba
 [](
 
 Shenggang Li
-
 Towards AI
 
 157 2

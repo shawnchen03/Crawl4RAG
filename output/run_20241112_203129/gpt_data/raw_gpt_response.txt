@@ -1,0 +1,54 @@
+```json
+{
+    "bundles": {
+        "AI and Data Science Conferences": {
+            "urls": [
+                "https://odsc.com/boston?__hstc=39712252.5deef30ec70451b19108a050bb4178f7.1731461624922.1731461624922.1731461624922.1&__hssc=39712252.1.1731461624922&__hsfp=2038185260",
+                "https://odsc.com/california?__hstc=39712252.5deef30ec70451b19108a050bb4178f7.1731461624922.1731461624922.1731461624922.1&__hssc=39712252.1.1731461624922&__hsfp=2038185260"
+            ],
+            "topic": "Information about upcoming AI and Data Science conferences.",
+            "metadata": {
+                "main_theme": "Conferences and Events in AI",
+                "key_concepts": ["AI Conferences", "Data Science Events"],
+                "target_audience": "Data scientists, AI enthusiasts, and professionals looking to network",
+                "difficulty_level": "beginner"
+            },
+            "articles": [
+                {
+                    "url": "https://odsc.com/boston?__hstc=39712252.5deef30ec70451b19108a050bb4178f7.1731461624922.1731461624922.1731461624922.1&__hssc=39712252.1.1731461624922&__hsfp=2038185260",
+                    "relevance": "This link provides details about the ODSC East conference, which focuses on AI and data science."
+                },
+                {
+                    "url": "https://odsc.com/california?__hstc=39712252.5deef30ec70451b19108a050bb4178f7.1731461624922.1731461624922.1731461624922.1&__hssc=39712252.1.1731461624922&__hsfp=2038185260",
+                    "relevance": "This link provides details about the ODSC West conference, which focuses on AI and data science."
+                }
+            ]
+        },
+        "AI Training and Resources": {
+            "urls": [
+                "https://aiplus.odsc.com/?__hstc=39712252.5deef30ec70451b19108a050bb4178f7.1731461624922.1731461624922.1731461624922.1&__hssc=39712252.1.1731461624922&__hsfp=2038185260",
+                "https://www.meetup.com/open-data-odsc/"
+            ],
+            "topic": "Resources and training opportunities in AI.",
+            "metadata": {
+                "main_theme": "AI Training and Community Engagement",
+                "key_concepts": ["AI Training", "Meetups", "Community"],
+                "target_audience": "Individuals looking to enhance their AI skills and network with others",
+                "difficulty_level": "beginner/intermediate"
+            },
+            "articles": [
+                {
+                    "url": "https://aiplus.odsc.com/?__hstc=39712252.5deef30ec70451b19108a050bb4178f7.1731461624922.1731461624922.1731461624922.1&__hssc=39712252.1.1731461624922&__hsfp=2038185260",
+                    "relevance": "This link provides access to AI training resources offered by ODSC."
+                },
+                {
+                    "url": "https://www.meetup.com/open-data-odsc/",
+                    "relevance": "This link provides information about meetups related to open data and AI."
+                }
+            ]
+        }
+    },
+    "total_urls": "4",
+    "selection_logic": "The selection process involved identifying URLs that are relevant to specific themes in AI and Data Science, focusing on conferences and training resources. Each bundle was created to ensure a clear thematic connection among the selected URLs."
+}
+```

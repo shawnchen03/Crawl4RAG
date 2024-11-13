@@ -334,3 +334,256 @@
 2. Fix directory nesting
 3. Verify content quality
 4. Add more error handling
+
+## v1.4.6 (Current - Workflow Restructure)
+### Latest Changes (2024-11-12)
+- Restructured workflow to follow clear sequential steps
+- Fixed directory structure for proper content organization
+- Improved bundle detection and processing flow
+
+### Current State
+1. Working Flow:
+   - Initial content fetch with Jina
+   - Link extraction and GPT bundle detection
+   - Per-bundle content processing
+   - Final GPT formatting
+
+2. Directory Structure:
+   - Organized by processing stage
+   - Clear separation of raw data, GPT analysis, and processed content
+   - Flat article structure with bundle identification
+
+3. Fixed Issues:
+   - Content duplication in nested directories
+   - Unclear processing flow
+   - Mixed content and bundle organization
+
+### Next Steps
+1. Update OpenAI API calls to v1.0.0
+2. Implement better error recovery
+3. Add progress tracking
+4. Improve duplicate detection
+
+## v1.4.7 (Current - API Tracking and Caching)
+### Latest Changes (2024-11-12)
+- Implemented shared JinaReader singleton with caching
+- Added comprehensive API logging system
+- Restructured content processing flow
+- Added user-defined bundle topics
+
+### Major Improvements
+1. API Management:
+   - Created APILogger for tracking Jina and GPT calls
+   - Implemented request caching for Jina reader
+   - Added cost tracking for GPT usage
+   - Added detailed API call statistics
+
+2. Content Organization:
+   - Added user-defined bundle topics
+   - Improved bundle size limits
+   - Enhanced duplicate detection
+   - Fixed directory structure issues
+
+3. New Features:
+   - Interactive bundle configuration
+   - API usage reporting
+   - Content caching
+   - Detailed logging
+
+### Current State
+1. Working Components:
+   - Shared JinaReader with caching
+   - API logging and cost tracking
+   - User-defined bundle topics
+   - Proper directory structure
+
+2. Directory Structure:
+   - Flat article organization
+   - Clear separation of processing stages
+   - API logs and cache storage
+   - Bundle-based content organization
+
+3. Fixed Issues:
+   - Duplicate Jina API calls
+   - Nested directory problems
+   - Bundle size control
+   - Content duplication
+
+### Next Steps
+1. Test with larger datasets
+2. Implement progress bars
+3. Add batch processing
+4. Enhance error recovery
+
+## v1.4.8 (Current - Bundle Configuration Enhancement)
+### Latest Changes (2024-11-12)
+- Updated bundle configuration options
+- Added flexibility in bundle number selection
+- Improved GPT bundle detection
+
+### Major Updates
+1. Bundle Configuration:
+   - Extended bundle range to 1-6 bundles
+   - Added option to let GPT decide bundle count
+   - Improved bundle naming flexibility
+   - Better handling of auto-detection
+
+2. User Interface:
+   - More intuitive bundle selection
+   - Clearer configuration options
+   - Better user guidance
+   - Enhanced error handling
+
+3. GPT Integration:
+   - Smarter bundle count detection
+   - Improved topic clustering
+   - Better content distribution
+
+### Current State
+1. Bundle Configuration Options:
+   - Manual: 1-6 bundles with user-defined names
+   - Auto: GPT decides optimal number and names
+   - Hybrid: User specifies count, GPT names bundles
+
+2. Fixed Issues:
+   - Bundle count limitations
+   - Naming restrictions
+   - Configuration flexibility
+
+### Next Steps
+1. Add bundle size balancing
+2. Improve topic coherence
+3. Enhance metadata generation
+4. Add configuration validation
+
+## v1.4.9 (Current - Directory Structure and Workflow Refinement)
+### Latest Changes (2024-11-12)
+- Reorganized directory structure for clearer content organization
+- Fixed duplicate content processing
+- Improved bundle combination workflow
+- Updated GPT-4-40-mini model integration
+
+### Major Updates
+1. Directory Structure:
+   - Articles now organized by bundle under articles/
+   - Bundle combined files properly nested
+   - Clear separation of processing stages
+   - Improved metadata preservation
+
+2. Content Processing:
+   - Fixed duplicate Jina reader calls
+   - Improved content caching
+   - Better bundle metadata handling
+   - Clearer processing flow
+
+3. Workflow Improvements:
+   - Master combined file always created
+   - Optional GPT formatting step
+   - Better progress tracking
+   - Enhanced error handling
+
+### Current State
+1. Directory Organization:
+   ```
+   output/run_[timestamp]/
+   ├── articles/
+   │   ├── bundle1/
+   │   │   ├── article1.md
+   │   │   └── bundle1_combined.md
+   │   └── bundle2/
+   │       ├── article2.md
+   │       └── bundle2_combined.md
+   ├── master_combined.md
+   └── master_formatted.md (optional)
+   ```
+
+2. Fixed Issues:
+   - Duplicate content processing
+   - Directory structure confusion
+   - Bundle combination workflow
+   - Content metadata preservation
+
+### Next Steps
+1. Add progress bars for long operations
+2. Implement batch processing for large datasets
+3. Add content validation checks
+4. Enhance error recovery mechanisms
+
+## v1.5.0 (Current - Content Processing and Storage Fix)
+### Latest Changes (2024-11-12)
+- Fixed article storage and processing issues
+- Improved Jina reader markdown formatting
+- Enhanced bundle content organization
+- Fixed duplicate content detection
+
+### Major Updates
+1. Content Storage:
+   - Fixed article saving in bundle directories
+   - Implemented proper markdown formatting
+   - Added metadata preservation
+   - Improved file naming convention
+
+2. Jina Reader:
+   - Added markdown formatting for raw content
+   - Improved title and metadata extraction
+   - Enhanced caching mechanism
+   - Better error handling
+
+3. Bundle Processing:
+   - Fixed bundle directory structure
+   - Improved combined file generation
+   - Added bundle metadata to articles
+   - Enhanced content organization
+
+### Current State
+1. Working Components:
+   ```
+   Jina Reader → Markdown Content → Bundle Storage
+      ↓              ↓                    ↓
+   Caching     Metadata Added     Directory Structure
+      ↓              ↓                    ↓
+   API Logs     Content Format      Bundle Organization
+   ```
+
+2. Fixed Issues:
+   - Article storage location
+   - Markdown formatting
+   - Content duplication
+   - Bundle organization
+
+3. Improvements:
+   - Better content structure
+   - Cleaner markdown output
+   - Proper metadata handling
+   - Reliable storage system
+
+### Next Steps
+1. Add content validation
+2. Implement progress tracking
+3. Add batch processing
+4. Enhance error recovery
+
+### Technical Notes
+1. Content Processing:
+   - Jina reader now formats content as markdown
+   - Metadata section added to each article
+   - Bundle information preserved
+   - Proper file hierarchy maintained
+
+2. Storage Structure:
+   ```
+   articles/
+   ├── bundle1/
+   │   ├── article1.md      # Individual article with metadata
+   │   ├── article2.md      # Properly formatted markdown
+   │   └── combined.md      # Bundle's combined content
+   └── bundle2/
+       ├── article3.md
+       └── combined.md
+   ```
+
+3. Known Limitations:
+   - Rate limiting on Jina API
+   - Timeout issues with large pages
+   - Memory usage with many articles
+   - Processing speed constraints

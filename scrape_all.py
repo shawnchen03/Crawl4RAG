@@ -1,4 +1,4 @@
-from finance_crawler import FinanceCrawler
+from content_crawler import ContentCrawler
 from article_formatter import ArticleFormatter
 from url_bundles import URLBundles
 from bundle_detector import BundleDetector
@@ -8,9 +8,11 @@ import time
 import json
 import argparse
 from urllib.parse import urlparse
+from jina_reader import JinaReader
+from api_logger import APILogger
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Finance Article Scraper with Bundle Detection')
+    parser = argparse.ArgumentParser(description='Content Scraper with Bundle Detection')
     parser.add_argument('--max-urls', type=int, default=100,
                        help='Maximum number of URLs to crawl (default: 100)')
     parser.add_argument('--delay', type=int, default=15,
@@ -23,172 +25,206 @@ def parse_args():
                        help='Minimum unique content length (default: 500 chars)')
     return parser.parse_args()
 
-def get_safe_directory_name(url: str) -> str:
-    """Convert URL to a safe directory name"""
-    parsed = urlparse(url)
-    # Combine netloc and path, replace unsafe chars with underscores
-    path = (parsed.netloc + parsed.path).rstrip('/')
-    safe_name = ''.join(c if c.isalnum() or c in ['.', '-'] else '_' for c in path)
-    return safe_name
-
-def combine_all_bundles(run_dir: str, output_file: str):
-    """Combine all bundle files into one master file"""
-    print("\nCombining all bundles...")
+def get_bundle_preferences(max_urls: int):
+    """Get user preferences for bundle organization"""
+    print("\nBundle Configuration:")
     
-    try:
-        # Find all bundle files
-        bundle_files = []
-        for root, _, files in os.walk(run_dir):
-            for file in files:
-                if file.endswith('_combined.md'):
-                    bundle_files.append(os.path.join(root, file))
+    # First, choose bundle naming approach
+    print("\nChoose bundle organization method:")
+    print("1. Define your own bundle names")
+    print("2. Let GPT suggest bundles")
+    bundle_choice = input("Enter choice (1 or 2): ")
+    
+    if bundle_choice == "1":
+        # User-defined bundles
+        while True:
+            try:
+                num_bundles = int(input("\nHow many topic bundles would you like? (0 or 1-6)\n0 = Let GPT decide: "))
+                if num_bundles == 0 or 1 <= num_bundles <= 6:
+                    break
+                print("Please enter 0 or a number between 1 and 6")
+            except ValueError:
+                print("Please enter a valid number")
         
-        if not bundle_files:
-            print("No bundle files found to combine")
-            return
+        print(f"\nMaximum URLs to process: {max_urls}")
         
-        # Combine all files
-        with open(output_file, 'w', encoding='utf-8') as outfile:
-            for bundle_file in bundle_files:
-                bundle_name = os.path.basename(bundle_file).replace('_combined.md', '')
-                outfile.write(f"\n\n# Bundle: {bundle_name}\n\n")
-                
-                with open(bundle_file, 'r', encoding='utf-8') as infile:
-                    outfile.write(infile.read())
-                    
-        print(f"Combined {len(bundle_files)} bundles into: {output_file}")
+        if num_bundles == 0:
+            return {
+                "auto_detect": True,
+                "max_urls": max_urls,
+                "bundle_names": []
+            }
         
-    except Exception as e:
-        print(f"Error combining bundles: {str(e)}")
+        # Get bundle names
+        bundle_names = []
+        print("\nEnter the topic/name for each bundle:")
+        for i in range(num_bundles):
+            while True:
+                name = input(f"Bundle {i+1}: ").strip()
+                if name and name not in bundle_names:
+                    bundle_names.append(name)
+                    break
+                print("Please enter a unique, non-empty name")
+        
+        return {
+            "auto_detect": False,
+            "num_bundles": num_bundles,
+            "max_urls": max_urls,
+            "bundle_names": bundle_names
+        }
+    else:
+        # GPT-suggested bundles
+        print(f"\nMaximum URLs to process: {max_urls}")
+        print("\nGPT will analyze the content and suggest appropriate bundles")
+        return {
+            "auto_detect": True,
+            "max_urls": max_urls,
+            "bundle_names": []
+        }
 
 def main():
-    # Parse command line arguments
     args = parse_args()
-    
-    # Load OpenAI API key
     load_dotenv()
     api_key = os.getenv('OPENAI_API_KEY')
     
     if not api_key:
         raise ValueError("Please set OPENAI_API_KEY environment variable")
     
-    # Create base output directory consistently
+    # Create directory structure
     base_output_dir = "output"
     os.makedirs(base_output_dir, exist_ok=True)
     
-    # Initialize run_dir at the start
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     run_dir = os.path.join(base_output_dir, f"run_{timestamp}")
     os.makedirs(run_dir, exist_ok=True)
     
-    # Initialize scraper and formatter before the choice branch
-    scraper = FinanceCrawler(output_dir=run_dir, timeout=args.timeout)
-    formatter = ArticleFormatter(api_key)
-    
-    # Ask user for bundle source
     print("\nChoose bundle source:")
     print("1. Use predefined bundles")
     print("2. Detect bundles from website")
     choice = input("Enter choice (1 or 2): ")
     
     if choice == "2":
-        # Get website URL from user
+        # Pass max_urls from command line args
+        bundle_prefs = get_bundle_preferences(args.max_urls)
+        
         base_url = input("\nEnter website URL to analyze: ")
+        # Initialize API logger
+        api_logger = APILogger(run_dir)
         
-        # Initialize detector with run_dir
-        detector = BundleDetector(api_key, base_url, max_urls=args.max_urls, output_dir=run_dir)
+        # Initialize shared components with logger
+        reader = JinaReader()
+        reader.set_cache_file(run_dir)
+        reader.set_logger(api_logger)
         
-        # Detect bundles
+        detector = BundleDetector(
+            api_key, 
+            base_url, 
+            max_urls=args.max_urls,
+            output_dir=run_dir,
+            bundle_preferences=bundle_prefs,  # Now includes auto_detect flag
+            jina_reader=reader,
+            api_logger=api_logger
+        )
+        
         detected_bundles = detector.detect_bundles()
         
-        if not detected_bundles or not any(urls for urls in detected_bundles.values()):
-            print("\nError: No valid bundles were detected from the website.")
-            print("Please check the URL and try again.")
+        if not detected_bundles:
+            print("No bundles detected")
             return
         
-        # Convert GPT's rich bundle format to URLBundles format
-        simplified_bundles = {}
-        if isinstance(detected_bundles, dict) and 'categories' in detected_bundles:
-            # New GPT format
-            for category, data in detected_bundles['categories'].items():
-                if data.get('urls'):  # Only add if there are URLs
-                    simplified_bundles[category] = data['urls']
-        else:
-            # Old format
-            simplified_bundles = {k: v for k, v in detected_bundles.items() if v}  # Only keep non-empty bundles
-        
-        if not simplified_bundles:
-            print("\nError: No valid bundles were created.")
-            print("Please check the URL and try again.")
-            return
-        
-        # Allow user to review and edit bundles
-        print("\nDetected bundles:")
-        for bundle_name, urls in simplified_bundles.items():
-            print(f"\n{bundle_name}:")
+        # Show detected bundles for confirmation
+        print("\nDetected/Created bundles:")
+        for name, urls in detected_bundles.items():
+            print(f"\n{name}:")
             for url in urls:
                 print(f"- {url}")
         
         proceed = input("\nProceed with these bundles? (y/n): ")
         if proceed.lower() != 'y':
-            print("Exiting...")
             return
         
-        # Clear existing bundles before updating
+        # Convert and store bundles
         URLBundles.BUNDLES.clear()
-        URLBundles.BUNDLES.update(simplified_bundles)
+        URLBundles.BUNDLES.update(detected_bundles)
     
-    else:
-        # Use same run_dir for predefined bundles
-        scraper = FinanceCrawler(output_dir=run_dir, timeout=args.timeout)
-        formatter = ArticleFormatter(api_key)
+    # Initialize crawler with shared reader
+    scraper = ContentCrawler(
+        output_dir=run_dir, 
+        timeout=args.timeout,
+        jina_reader=reader  # Pass same reader instance
+    )
     
-    # Rest of the scraping logic...
-    all_bundles = URLBundles.list_bundles()
+    # Process bundles
+    bundle_combined_files = []
+    successful_bundles = []
     
-    print("\nConfiguration:")
-    print(f"- Max URLs per bundle: {args.max_urls}")
-    print(f"- Delay between bundles: {args.delay} seconds")
-    print(f"- Request timeout: {args.timeout} seconds")
-    print(f"- Output directory: {run_dir}")
-    
-    print("\nStarting comprehensive article scraping...")
-    print(f"Will scrape {len(all_bundles)} bundles:")
-    for bundle in all_bundles:
-        print(f"- {bundle.replace('_', ' ').title()}")
-    
-    # Process each bundle
-    for i, bundle in enumerate(all_bundles, 1):
-        print(f"\n[{i}/{len(all_bundles)}] Processing bundle: {bundle.replace('_', ' ').title()}")
-        try:
-            # Scrape the bundle
-            scraper.scrape_bundle(bundle)
+    for bundle_name in URLBundles.list_bundles():
+        print(f"\nProcessing bundle: {bundle_name}")
+        articles = scraper.scrape_bundle(bundle_name)
+        
+        if articles:
+            bundle_dir = os.path.join(scraper.articles_dir, bundle_name)
+            bundle_combined = os.path.join(bundle_dir, f"{bundle_name}_combined.md")
             
-            # Rename the combined file to include bundle name
-            old_combined = os.path.join(run_dir, "finance_articles_combined.md")
-            new_combined = os.path.join(run_dir, f"{bundle}_combined.md")
-            if os.path.exists(old_combined):
-                os.rename(old_combined, new_combined)
+            if os.path.exists(bundle_combined):
+                bundle_combined_files.append(bundle_combined)
+                successful_bundles.append(bundle_name)
             
-            time.sleep(args.delay)  # Configurable delay
-                
-        except Exception as e:
-            print(f"Error processing bundle {bundle}: {str(e)}")
-            continue
+            time.sleep(args.delay)
     
-    # Combine all bundle files into one master file
+    # Create master combined file
     master_combined = os.path.join(run_dir, "master_combined.md")
-    combine_all_bundles(run_dir, master_combined)
     
-    # Format the master file
-    master_formatted = os.path.join(run_dir, "master_formatted.md")
-    formatter.format_articles(master_combined, master_formatted)
+    if successful_bundles:
+        print(f"\nSuccessfully processed {len(successful_bundles)} bundles:")
+        for bundle in successful_bundles:
+            print(f"- {bundle}")
+        
+        print("\nCreating master combined file...")
+        with open(master_combined, 'w', encoding='utf-8') as outfile:
+            for bundle_file in bundle_combined_files:
+                bundle_name = os.path.basename(os.path.dirname(bundle_file))
+                outfile.write(f"\n\n# Bundle: {bundle_name}\n\n")
+                
+                with open(bundle_file, 'r', encoding='utf-8') as infile:
+                    outfile.write(infile.read())
+                    outfile.write("\n\n---\n\n")
+        
+        print(f"Master combined file created: {master_combined}")
+        proceed = input("Would you like to format the combined content? (y/n): ")
+        
+        if proceed.lower() == 'y':
+            print("\nFormatting combined content...")
+            master_formatted = os.path.join(run_dir, "master_formatted.md")
+            formatter = ArticleFormatter(api_key)
+            formatter.format_articles(master_combined, master_formatted)
+            print(f"\nFormatted content saved to: {master_formatted}")
+        else:
+            print("\nSkipping formatting. Process completed.")
+            master_formatted = None
+    else:
+        print("\nNo bundles were successfully processed.")
+        return
     
     print("\nProcessing completed!")
     print("Check the following locations for results:")
-    print(f"1. Individual bundles: {run_dir}/[bundle_name]/")
-    print(f"2. Master combined file: {master_combined}")
-    print(f"3. Master formatted file: {master_formatted}")
+    print(f"1. Individual articles by bundle: {scraper.articles_dir}/[bundle_name]/")
+    print("2. Bundle combined files:")
+    for f in bundle_combined_files:
+        print(f"   - {os.path.relpath(f, run_dir)}")
+    print(f"3. Master combined file: {master_combined}")
+    if master_formatted:
+        print(f"4. Master formatted file: {master_formatted}")
+    
+    # Print API usage summary
+    if api_logger:
+        summary = api_logger.get_summary()
+        print("\nAPI Usage Summary:")
+        print(f"Jina Reader: {summary['jina_reader']['total_calls']} calls "
+              f"({summary['jina_reader']['failed_calls']} failed)")
+        print(f"GPT-4-40-mini: {summary['gpt-4-40-mini']['total_calls']} calls, "
+              f"Total tokens: {summary['gpt-4-40-mini']['total_tokens']}, "
+              f"Cost: ${summary['gpt-4-40-mini']['total_cost']:.4f}")
 
 if __name__ == "__main__":
     main()

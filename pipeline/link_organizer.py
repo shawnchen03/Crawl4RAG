@@ -23,7 +23,7 @@ class LinkOrganizer:
         
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-4",
+                model="gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": """You are a content organizer.
                     Analyze these links and group them into logical bundles.
