@@ -587,3 +587,48 @@
    - Timeout issues with large pages
    - Memory usage with many articles
    - Processing speed constraints
+
+## v1.5.1 (Current - Jina Reader and Storage Optimization)
+### Latest Changes (2024-11-12)
+- Fixed Jina reader markdown formatting
+- Optimized content storage
+- Removed image handling
+- Updated GPT-4-40-mini pricing
+
+### Major Updates
+1. Jina Reader:
+   - Increased timeout to 130s
+   - Improved markdown formatting
+   - Removed image processing
+   - Enhanced error handling
+
+2. Content Storage:
+   - Fixed article directory structure
+   - Improved bundle organization
+   - Enhanced metadata handling
+   - Fixed duplicate storage issues
+
+3. Cost Tracking:
+   - Updated to GPT-4-40-mini pricing ($3/1M tokens)
+   - Improved cost calculation
+   - Better usage reporting
+   - Clearer cost breakdown
+
+### Current State
+1. Fixed Issues:
+   - Article storage location
+   - Jina reader timeouts
+   - Duplicate content storage
+   - Image handling removed
+
+2. Improvements:
+   - Cleaner content structure
+   - Better error messages
+   - More accurate cost tracking
+   - Faster processing
+
+### Next Steps
+1. Add progress bars
+2. Implement batch processing
+3. Add content validation
+4. Enhance error recovery

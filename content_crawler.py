@@ -162,21 +162,6 @@ class ContentCrawler:
         # Process content
         content = self._detect_site_patterns(content, url)
         
-        # Process images if present
-        image_sections = []
-        soup = BeautifulSoup(content, 'html.parser')
-        
-        # Find image references in Jina's markdown output
-        image_refs = soup.find_all(string=lambda text: text and '![' in text)
-        for img in image_refs:
-            caption = img.strip()
-            if "Image" in caption and ":" in caption:
-                image_sections.append(f"\n### Image Analysis\n{caption}\n")
-        
-        if image_sections:
-            content += "\n\n## Visual Content Analysis\n"
-            content += "\n".join(image_sections)
-        
         # Create document with metadata
         document = {
             "content": content,
@@ -272,10 +257,14 @@ class ContentCrawler:
             print(f"Error saving combined markdown: {str(e)}")
             return 0
 
-    def process_urls(self, urls: List[str]):
+    def process_urls(self, urls: List[str], bundle_name: str = "custom"):
         """Process a list of URLs with duplicate detection"""
         documents = []
         domain_counts = defaultdict(int)
+        
+        # Create bundle directory
+        bundle_dir = os.path.join(self.articles_dir, bundle_name)
+        os.makedirs(bundle_dir, exist_ok=True)
         
         for url in urls:
             domain = self._get_domain(url)
@@ -289,13 +278,20 @@ class ContentCrawler:
             try:
                 document = self._fetch_content(url)
                 if document:
-                    self._save_to_markdown(document, url)
-                    documents.append(document)
+                    # Save with bundle name
+                    filepath = self._save_to_markdown(document, url, bundle_name)
+                    if filepath:
+                        documents.append(document)
+                        print(f"Successfully saved article to: {os.path.relpath(filepath, self.output_dir)}")
                 time.sleep(2)
             except Exception as e:
                 print(f"Failed to process {url}: {str(e)}")
         
         # Save combined markdown if we have documents
         if documents:
-            combined_file = os.path.join(self.output_dir, "combined_articles.md")
-            self._save_combined_markdown(documents, combined_file)
+            bundle_combined = os.path.join(bundle_dir, f"{bundle_name}_combined.md")
+            num_unique = self._save_combined_markdown(documents, bundle_name, bundle_combined)
+            print(f"Created combined file with {num_unique} unique articles")
+            return documents
+        
+        return []
