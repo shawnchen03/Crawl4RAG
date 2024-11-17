@@ -1,4 +1,0 @@
-{"timestamp": "2024-11-12T23:20:46.647401", "api": "jina_reader", "url": "https://www.sagacify.com/news", "status_code": 200, "success": true, "error": null}
-{"timestamp": "2024-11-12T23:21:13.406485", "api": "jina_reader", "url": "https://www.sagacify.com/industries", "status_code": 200, "success": true, "error": null}
-{"timestamp": "2024-11-12T23:21:23.182919", "api": "jina_reader", "url": "https://www.sagacify.com/cases", "status_code": 200, "success": true, "error": null}
-{"timestamp": "2024-11-12T23:21:42.065008", "api": "jina_reader", "url": "https://www.sagacify.com/services", "status_code": 200, "success": true, "error": null}
