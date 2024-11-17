@@ -107,8 +107,8 @@ class ArticleFormatter:
             return self._clean_markdown_links(content)
 
     def calculate_cost(self) -> Dict:
-        """Calculate estimated cost based on GPT-4 pricing"""
-        # GPT-4 pricing (as of 2024): $0.03/1K tokens for input, $0.06/1K tokens for output
+        """Calculate estimated cost based on GPT-4o-mini pricing"""
+        # GPT-4o-mini pricing (as of 2024): $0.03/1K tokens for input, $0.06/1K tokens for output
         # Assuming roughly 2:1 ratio of input:output tokens
         input_tokens = int(self.total_tokens_used * 0.67)  # Approximate input tokens
         output_tokens = int(self.total_tokens_used * 0.33)  # Approximate output tokens

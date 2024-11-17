@@ -27,6 +27,7 @@ wheels/
 
 # Directories
 mdforfinance/
+mdforfinance1/
 tech_content/
 health_content/
 backup/
@@ -46,3 +47,4 @@ combined_articlesnew.md
 *.swp
 *.swo
 .DS_Store 
+/output
